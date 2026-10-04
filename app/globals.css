@@ -1,0 +1,82 @@
+@import "tailwindcss";
+
+@theme {
+  /* ── Colour tokens ── */
+  --color-royal-950: #06122e;
+  --color-royal-900: #0a1f5c;
+  --color-royal-700: #1e40af;
+  --color-paper: #f5f7fb;
+  --color-ink: #0f172a;
+  --color-gold: #c9a24b;
+  --color-white: #ffffff;
+
+  /* ── Font-family tokens ── */
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-cormorant), ui-serif, Georgia, serif;
+}
+
+/* ── Base reset & typographic defaults ── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  background-color: var(--color-royal-950);
+  color: var(--color-white);
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Focus ring ── */
+:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 3px;
+}
+
+/* ── Skip-to-content ── */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 1rem;
+  z-index: 9999;
+  padding: 0.5rem 1rem;
+  background: var(--color-gold);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 0 0 4px 4px;
+  transition: top 0.15s ease;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* ── Hairline divider utility ── */
+.hairline {
+  border: none;
+  border-top: 1px solid rgba(201, 162, 75, 0.25);
+}
+
+/* ── Selection ── */
+::selection {
+  background-color: var(--color-gold);
+  color: var(--color-ink);
+}
