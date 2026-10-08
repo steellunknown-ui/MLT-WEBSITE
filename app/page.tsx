@@ -60,7 +60,7 @@ export default function HomePage() {
               <ImagePlaceholder
                 aspectRatio="4/5"
                 description="PLACEHOLDER: formal portrait of M. L. Tandon"
-                className="shadow-2xl shadow-black/50"
+                className="border border-gold/10"
               />
             </Reveal>
           </div>
@@ -171,7 +171,7 @@ export default function HomePage() {
               <ImagePlaceholder
                 aspectRatio="21/9"
                 description="PLACEHOLDER: event or factory photograph"
-                className="rounded-sm shadow-lg"
+                className="rounded-sm border border-gold/10"
               />
               <p className="mt-4 text-center text-sm font-serif italic text-ink/60">
                 [TO BE FILLED: caption]
@@ -202,7 +202,7 @@ export default function HomePage() {
               <div className="lg:col-span-7">
                 <Reveal delay={0.1}>
                   <Link href={`/blog/${posts[0].slug}`} className="group block">
-                    <div className="bg-white rounded-sm overflow-hidden shadow-sm border border-gold/10 hover:shadow-md transition-shadow h-full flex flex-col">
+                    <div className="bg-white rounded-sm overflow-hidden border border-gold/10 h-full flex flex-col">
                       <div className="relative aspect-[16/9] bg-royal-900 overflow-hidden">
                          {posts[0].coverImage ? (
                            // eslint-disable-next-line @next/next/no-img-element
@@ -236,7 +236,7 @@ export default function HomePage() {
                 {posts.slice(1).map((post, idx) => (
                   <Reveal key={post.slug} delay={0.2 + (idx * 0.1)} className="flex-1">
                     <Link href={`/blog/${post.slug}`} className="group block h-full">
-                      <div className="bg-white p-8 rounded-sm shadow-sm border border-gold/10 hover:shadow-md transition-shadow h-full flex flex-col">
+                      <div className="bg-white p-8 rounded-sm border border-gold/10 h-full flex flex-col">
                         <span className="text-xs font-semibold uppercase tracking-widest text-gold mb-3 block">
                           {post.category}
                         </span>
