@@ -1,9 +1,10 @@
 import { site } from "@/lib/site";
-import { getVentures } from "@/lib/content";
+import { getVentures, getAchievements } from "@/lib/content";
 import { getAllPosts } from "@/lib/blog";
 import Button from "@/components/ui/Button";
 import ImagePlaceholder from "@/components/ui/ImagePlaceholder";
 import Reveal from "@/components/ui/Reveal";
+import AchievementsSlider from "@/components/ui/AchievementsSlider";
 import Link from "next/link";
 import type { Metadata } from "next";
 
@@ -22,6 +23,7 @@ export const metadata: Metadata = {
 
 export default function HomePage() {
   const ventures = getVentures().slice(0, 4);
+  const achievements = getAchievements();
   const posts = getAllPosts().slice(0, 3);
 
   return (
@@ -30,24 +32,37 @@ export default function HomePage() {
       <section className="bg-royal-950 text-white min-h-[90vh] flex items-center relative overflow-hidden">
         <div className="container mx-auto px-4 md:px-8 py-24 lg:py-0 w-full relative z-10 flex flex-col lg:flex-row items-center gap-16 lg:gap-8">
           {/* Left 7 cols */}
-          <div className="w-full lg:w-7/12 relative pl-6">
+          <div className="w-full lg:w-7/12 relative pl-6 lg:pl-10">
             {/* Thin gold vertical hairline */}
             <div className="absolute top-0 bottom-0 left-0 w-px bg-gold/30"></div>
+            
             <Reveal delay={0.1}>
-              <span className="block text-sm font-semibold uppercase tracking-widest text-gold/80 mb-6">
+              <span className="block text-xs md:text-sm font-semibold uppercase tracking-[0.2em] text-gold/80 mb-6 md:mb-8">
                 {site.title}
               </span>
-              <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl leading-tight mb-6 text-white">
+            </Reveal>
+            
+            <Reveal delay={0.2}>
+              <h1 className="font-serif text-6xl md:text-8xl lg:text-[7.5rem] leading-[1.05] mb-6 md:mb-8 text-white tracking-tight">
                 {site.founderName}
               </h1>
-              <p className="text-xl md:text-2xl text-white/80 font-serif mb-10 max-w-2xl">
+            </Reveal>
+            
+            <Reveal delay={0.3}>
+              <p className="text-xl md:text-2xl lg:text-3xl text-white/90 font-serif mb-6 max-w-2xl leading-relaxed">
                 {site.tagline}
               </p>
+              <p className="text-lg md:text-xl text-white/60 mb-12 max-w-2xl leading-relaxed">
+                {site.description}
+              </p>
+            </Reveal>
+            
+            <Reveal delay={0.4}>
               <div className="flex flex-wrap items-center gap-6">
-                <Button as="link" href="/journey">
+                <Button as="link" href="/journey" size="lg">
                   Read the Journey
                 </Button>
-                <Button as="link" href="/contact" variant="secondary">
+                <Button as="link" href="/contact" variant="secondary" size="lg">
                   Get in touch
                 </Button>
               </div>
@@ -56,12 +71,16 @@ export default function HomePage() {
 
           {/* Right 5 cols */}
           <div className="w-full lg:w-5/12 lg:-mr-12 relative z-0">
-            <Reveal delay={0.3} distance={40}>
-              <ImagePlaceholder
-                aspectRatio="4/5"
-                description="PLACEHOLDER: formal portrait of M. L. Tandon"
-                className="border border-gold/10"
-              />
+            <Reveal delay={0.5} distance={40}>
+              <div className="relative">
+                {/* Decorative border frame offset */}
+                <div className="absolute -inset-4 border border-gold/10 hidden md:block"></div>
+                <ImagePlaceholder
+                  aspectRatio="4/5"
+                  description="PLACEHOLDER: formal portrait of M. L. Tandon"
+                  className="border border-gold/20 shadow-none relative z-10"
+                />
+              </div>
             </Reveal>
           </div>
         </div>
@@ -163,20 +182,22 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 5. IMAGE BAND */}
-      <section className="bg-paper py-20">
+      {/* 5. KEY ACHIEVEMENTS */}
+      <section className="bg-paper py-24 md:py-32">
         <div className="container mx-auto px-4 md:px-8">
           <Reveal>
-            <div className="max-w-[1200px] mx-auto">
-              <ImagePlaceholder
-                aspectRatio="21/9"
-                description="PLACEHOLDER: event or factory photograph"
-                className="rounded-sm border border-gold/10"
-              />
-              <p className="mt-4 text-center text-sm font-serif italic text-ink/60">
-                [TO BE FILLED: caption]
-              </p>
+            <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+              <h2 className="font-serif text-4xl md:text-5xl text-royal-950">Key Achievements</h2>
+              <Link
+                href="/achievements"
+                className="inline-flex items-center gap-2 text-gold font-medium hover:text-royal-900 transition-colors uppercase tracking-widest text-sm"
+              >
+                All achievements <span aria-hidden="true">&rarr;</span>
+              </Link>
             </div>
+          </Reveal>
+          <Reveal delay={0.1}>
+            <AchievementsSlider achievements={achievements} />
           </Reveal>
         </div>
       </section>
