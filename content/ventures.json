@@ -1,0 +1,11 @@
+[
+  { "name": "Tandon Magnetics (India) Pvt. Ltd.", "role": "Founder", "since": "1978", "description": "Manufacturer of ferrite recording heads for computers. [CONFIRM: year and current status]" },
+  { "name": "Pentax Engineering", "role": "[CONFIRM: role]", "since": "1977", "description": "Engineering company formed after the IBM India plant closure." },
+  { "name": "Advance Technology Devices", "role": "[CONFIRM: role]", "since": "[CONFIRM]", "description": "Exporter of Winchester headstacks and computer hardware; now a division of Celetronix India. [CONFIRM: details]" },
+  { "name": "Tancom Electronics", "role": "[CONFIRM: role]", "since": "[CONFIRM]", "description": "Computer hardware exporter, including voice coils; now a division of Celetronix India. [CONFIRM: details]" },
+  { "name": "Ultra Tek Devices", "role": "[CONFIRM: role]", "since": "[CONFIRM]", "description": "Maker of switch mode power supplies, now Celetron Power India Pvt. Ltd. [CONFIRM: name spelling and status]" },
+  { "name": "Eastern Peripherals Pvt. Ltd.", "role": "[CONFIRM: role]", "since": "[CONFIRM]", "description": "SEEPZ-based electronics exporter. [CONFIRM: details]" },
+  { "name": "Celetronix India Pvt. Ltd.", "role": "[CONFIRM: role]", "since": "[CONFIRM]", "description": "Group company that brings together several earlier manufacturing businesses. [CONFIRM: details]" },
+  { "name": "Infinx Healthcare", "role": "Tandon Group company", "since": "[CONFIRM]", "description": "Healthcare technology and revenue cycle services company. [CONFIRM: wording]" },
+  { "name": "Syrma Technology", "role": "[CONFIRM: relationship and current status]", "since": "[CONFIRM]", "description": "Electronics manufacturing services company. [CONFIRM: only if founder wants it listed]" }
+]

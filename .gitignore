@@ -39,3 +39,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# raw founder media assets (never commit)
+/_raw/
+/founder-data/
