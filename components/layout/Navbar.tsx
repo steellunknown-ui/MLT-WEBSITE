@@ -3,12 +3,14 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { site } from "@/lib/site";
 
 export default function Navbar() {
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [drawerOpen, setDrawerOpen] = useState(false);
+  const [hoveredHref, setHoveredHref] = useState<string | null>(null);
   const drawerRef = useRef<HTMLDivElement>(null);
   const openButtonRef = useRef<HTMLButtonElement>(null);
 
@@ -20,10 +22,12 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handler);
   }, []);
 
-  // Close drawer on route change
-  useEffect(() => {
+  // Close drawer on route change without setting state inside effect
+  const [prevPathname, setPrevPathname] = useState(pathname);
+  if (pathname !== prevPathname) {
     setDrawerOpen(false);
-  }, [pathname]);
+    setPrevPathname(pathname);
+  }
 
   // Focus trap inside mobile drawer
   useEffect(() => {
@@ -75,6 +79,10 @@ export default function Navbar() {
   const isActive = (href: string) =>
     href === "/" ? pathname === "/" : pathname.startsWith(href);
 
+  // The link that should show the underline indicator:
+  // hovered link takes priority; falls back to the active page link.
+  const indicatorHref = hoveredHref ?? site.navLinks.find((l) => isActive(l.href))?.href ?? null;
+
   return (
     <>
       <header
@@ -96,29 +104,49 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop navigation */}
-          <nav aria-label="Primary navigation" className="hidden lg:block">
+          <nav
+            aria-label="Primary navigation"
+            className="hidden lg:block"
+            onMouseLeave={() => setHoveredHref(null)}
+          >
             <ul className="flex items-center gap-8" role="list">
-              {site.navLinks.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className={`relative font-sans text-sm tracking-wide transition-colors duration-200 ${
-                      isActive(link.href)
-                        ? "text-gold"
-                        : "text-white/80 hover:text-white"
-                    }`}
-                    aria-current={isActive(link.href) ? "page" : undefined}
-                  >
-                    {link.label}
-                    {isActive(link.href) && (
-                      <span
-                        className="absolute -bottom-1 left-0 h-px w-full bg-gold"
-                        aria-hidden="true"
-                      />
-                    )}
-                  </Link>
-                </li>
-              ))}
+              {site.navLinks.map((link) => {
+                const active = isActive(link.href);
+                const showIndicator = indicatorHref === link.href;
+
+                return (
+                  <li key={link.href}>
+                    <Link
+                      href={link.href}
+                      onMouseEnter={() => setHoveredHref(link.href)}
+                      className={`relative inline-block font-sans text-sm tracking-wide transition-colors duration-200 pb-1 ${
+                        active || hoveredHref === link.href
+                          ? "text-gold"
+                          : "text-white/80"
+                      }`}
+                      aria-current={active ? "page" : undefined}
+                    >
+                      {link.label}
+
+                      {/* Sliding gold underline — shared layoutId so it moves */}
+                      <AnimatePresence>
+                        {showIndicator && (
+                          <motion.span
+                            layoutId="nav-underline"
+                            className="absolute bottom-0 left-0 h-px w-full bg-gold"
+                            aria-hidden="true"
+                            initial={false}
+                            transition={{
+                              duration: 0.25,
+                              ease: "easeOut",
+                            }}
+                          />
+                        )}
+                      </AnimatePresence>
+                    </Link>
+                  </li>
+                );
+              })}
             </ul>
           </nav>
 

@@ -27,6 +27,8 @@ export const metadata: Metadata = {
   },
 };
 
+import MotionProvider from "@/components/ui/MotionProvider";
+
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
@@ -36,18 +38,20 @@ export default function RootLayout({
       className={`${cormorant.variable} ${inter.variable}`}
     >
       <body>
-        {/* Skip-to-content for keyboard users */}
-        <a href="#main-content" className="skip-link">
-          Skip to main content
-        </a>
+        <MotionProvider>
+          {/* Skip-to-content for keyboard users */}
+          <a href="#main-content" className="skip-link">
+            Skip to main content
+          </a>
 
-        <Navbar />
+          <Navbar />
 
-        <main id="main-content" tabIndex={-1}>
-          {children}
-        </main>
+          <main id="main-content" tabIndex={-1}>
+            {children}
+          </main>
 
-        <Footer />
+          <Footer />
+        </MotionProvider>
       </body>
     </html>
   );
