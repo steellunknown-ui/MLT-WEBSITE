@@ -9,13 +9,20 @@ export const site = {
   url: "[CONFIRM: domain]",
   socials: { linkedin: "[CONFIRM: URL]" },
   stats: [
-    { value: "1978", label: "Tandon Magnetics founded [CONFIRM: 1978 or 1979]" },
-    { value: "[CONFIRM]", label: "Group companies" },
-    { value: "[CONFIRM]", label: "People across the group" },
+    { value: "1963", label: "Joins IBM's San Jose development laboratory" },
+    { value: "1978", label: "Tandon Magnetics begins [CONFIRM: 1978 or 1979]" },
+    { value: "1997-98", label: "Electronics Man of the Year, ELCINA" }
   ],
   quote: {
-    text: "[CONFIRM: founder's own quote]",
-    attribution: "Manohar Lal Tandon",
+    text: "In the international market, the customer is supreme, whereas we in the zones feel procedures are supreme.",
+    attribution: "Manohar Lal Tandon, Presidential Address [CONFIRM: year, and founder's permission to use this quote]"
+  },
+  intro: {
+    pull: "[CONFIRM: one-sentence founder statement, in his words]",
+    body: [
+      "Manohar Lal Tandon began his career at IBM's San Jose development laboratory in 1963 and returned to India in 1967 to join IBM India.",
+      "From the late 1970s he built a group of electronics manufacturing and export companies, and today he is Chairman of the Tandon Group. [CONFIRM: replace with founder-approved text]"
+    ]
   },
   navLinks: [
     { label: "Home", href: "/" },
