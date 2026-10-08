@@ -62,6 +62,10 @@ export const site = {
   pages: {
     ventures: { intro: "[TO BE FILLED: ventures intro line]" },
     achievements: { intro: "[TO BE FILLED: achievements intro line]", note: "Awards listed here were received by companies of the Tandon Group and by M. L. Tandon. The recipient is named in each entry." },
-    media: { intro: "[TO BE FILLED: media intro line]" }
+    media: { intro: "[TO BE FILLED: media intro line]" },
+    blog: { intro: "[TO BE FILLED: blog intro line]" }
+  },
+  blog: {
+    authorLine: "[TO BE FILLED: one line about the author]"
   }
 };

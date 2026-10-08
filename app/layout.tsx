@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { cormorant, inter } from "@/lib/fonts";
 import { site } from "@/lib/site";
+import { siteUrl } from "@/lib/url";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 
@@ -11,9 +12,7 @@ export const metadata: Metadata = {
     template: `%s | ${site.siteName}`,
   },
   description: site.description,
-  metadataBase: new URL(
-    site.url.startsWith("[") ? "https://example.com" : site.url
-  ),
+  metadataBase: new URL(siteUrl()),
   openGraph: {
     type: "website",
     siteName: site.siteName,

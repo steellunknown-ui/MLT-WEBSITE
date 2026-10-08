@@ -1,10 +1,9 @@
 import { site } from "@/lib/site";
-import { getVentures, getAchievements } from "@/lib/content";
+import { getVentures } from "@/lib/content";
 import { getAllPosts } from "@/lib/blog";
 import Button from "@/components/ui/Button";
 import ImagePlaceholder from "@/components/ui/ImagePlaceholder";
 import Reveal from "@/components/ui/Reveal";
-import AchievementsSlider from "@/components/ui/AchievementsSlider";
 import Link from "next/link";
 import type { Metadata } from "next";
 
@@ -23,7 +22,6 @@ export const metadata: Metadata = {
 
 export default function HomePage() {
   const ventures = getVentures().slice(0, 4);
-  const achievements = getAchievements();
   const posts = getAllPosts().slice(0, 3);
 
   return (
@@ -182,22 +180,20 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 5. KEY ACHIEVEMENTS */}
-      <section className="bg-paper py-24 md:py-32">
+      {/* 5. IMAGE BAND */}
+      <section className="bg-paper py-20">
         <div className="container mx-auto px-4 md:px-8">
           <Reveal>
-            <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
-              <h2 className="font-serif text-4xl md:text-5xl text-royal-950">Key Achievements</h2>
-              <Link
-                href="/achievements"
-                className="inline-flex items-center gap-2 text-gold font-medium hover:text-royal-900 transition-colors uppercase tracking-widest text-sm"
-              >
-                All achievements <span aria-hidden="true">&rarr;</span>
-              </Link>
+            <div className="max-w-[1200px] mx-auto">
+              <ImagePlaceholder
+                aspectRatio="21/9"
+                description="PLACEHOLDER: event or factory photograph"
+                className="rounded-sm border border-gold/10"
+              />
+              <p className="mt-4 text-center text-sm font-serif italic text-ink/60">
+                [TO BE FILLED: caption]
+              </p>
             </div>
-          </Reveal>
-          <Reveal delay={0.1}>
-            <AchievementsSlider achievements={achievements} />
           </Reveal>
         </div>
       </section>
