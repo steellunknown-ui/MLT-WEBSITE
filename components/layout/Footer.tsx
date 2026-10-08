@@ -91,7 +91,7 @@ export default function Footer() {
                     LinkedIn
                   </a>
                 ) : (
-                  <span className="font-sans text-sm text-white/30 italic">
+                  <span className="font-sans text-sm text-white/60 italic">
                     LinkedIn [CONFIRM]
                   </span>
                 )}
@@ -103,12 +103,12 @@ export default function Footer() {
         {/* Bottom hairline + copyright */}
         <hr className="hairline" aria-hidden="true" />
         <div className="flex flex-col gap-2 py-6 sm:flex-row sm:items-center sm:justify-between">
-          <p className="font-sans text-xs text-white/40">
+          <p className="font-sans text-xs text-white/60">
             © {currentYear} {site.founderName}. All rights reserved.
           </p>
           <Link
             href="/privacy"
-            className="font-sans text-xs text-white/40 transition-colors duration-200 hover:text-white/70"
+            className="font-sans text-xs text-white/60 transition-colors duration-200 hover:text-white"
           >
             Privacy Policy
           </Link>
