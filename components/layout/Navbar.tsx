@@ -86,10 +86,10 @@ export default function Navbar() {
   return (
     <>
       <header
-        className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
+        className={`fixed inset-x-0 top-0 z-50 transition-colors duration-200 ${
           scrolled
-            ? "bg-royal-950 border-b border-gold/30"
-            : "bg-transparent border-b border-transparent"
+            ? "bg-royal-950 border-b border-gold/30 shadow-sm"
+            : "bg-royal-950/95 backdrop-blur-md border-b border-gold/15"
         }`}
         role="banner"
       >

@@ -8,11 +8,13 @@
   --color-paper: #f5f7fb;
   --color-ink: #0f172a;
   --color-gold: #c9a24b;
+  --color-gold-light: #dfba63;
   --color-white: #ffffff;
 
   /* ── Font-family tokens ── */
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   --font-serif: var(--font-cormorant), ui-serif, Georgia, serif;
+  --font-royal: var(--font-cinzel), var(--font-cormorant), Georgia, serif;
 }
 
 /* ── Base reset & typographic defaults ── */
@@ -79,4 +81,30 @@ body {
 ::selection {
   background-color: var(--color-gold);
   color: var(--color-ink);
+}
+
+/* ── Infinite continuous marquee for achievements showcase ── */
+@keyframes continuous-marquee {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.animate-continuous-marquee {
+  animation: continuous-marquee 55s linear infinite;
+  will-change: transform;
+}
+
+.animate-continuous-marquee:hover,
+.animate-continuous-marquee:focus-within {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-continuous-marquee {
+    animation-play-state: paused !important;
+  }
 }

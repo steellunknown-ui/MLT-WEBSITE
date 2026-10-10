@@ -43,3 +43,6 @@ next-env.d.ts
 # raw founder media assets (never commit)
 /_raw/
 /founder-data/
+/_review/
+lh*.json
+*.report.html

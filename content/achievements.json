@@ -1,14 +1,137 @@
 [
-  { "year": "1978-79", "title": "First export recognition", "issuer": "State Committee for Export Promotion, Maharashtra", "description": "Awarded to Tandon Magnetics for export of electronic and electrical products." },
-  { "year": "1979-80", "title": "National Award for Outstanding Export Performance", "issuer": "President of India (Giani Zail Singh)", "description": "Awarded to Tandon Magnetics." },
-  { "year": "1992-93", "title": "Best Exporter, Federation of Indian EPZ Industries Association", "issuer": "Dr. Manmohan Singh, Union Finance Minister", "description": "Awarded to Advance Technology Devices and Ultra Tek Devices." },
-  { "year": "1993-94", "title": "National Export Award", "issuer": "President of India (Shankar Dayal Sharma)", "description": "Awarded to Advance Technology Devices and Tancom Electronics." },
-  { "year": "1993-94", "title": "Highest Export Performance among EPZ, EOU, EHTP and STP units", "issuer": "Electronics and Computer Software Export Promotion Council (ESC)", "description": "Trophy presented by Pranab Mukherjee, Minister for Commerce, to Advance Technology Devices." },
-  { "year": "1995-96", "title": "MAIT Trophy for Excellence in IT Hardware Exports", "issuer": "MAIT, presented by Dr. B. B. Ramaiah, Minister of State for Commerce", "description": "Awarded to the Tandon Group and received by M. L. Tandon." },
-  { "year": "1996-97", "title": "Third Highest Export on an All-India Basis", "issuer": "Prime Minister A. B. Vajpayee", "description": "Trophy and certificate awarded to Tancom Electronics." },
-  { "year": "1997-98", "title": "Electronics Man of the Year", "issuer": "Electronic Industries Association of India (ELCINA)", "description": "Awarded to M. L. Tandon as Chairman, Tandon Group of Companies." },
-  { "year": "1999-2000", "title": "State Award for Best Exporters in Maharashtra", "issuer": "Government of Maharashtra", "description": "Awarded to Advance Technology Devices and Tancom Electronics." },
-  { "year": "2000-01", "title": "SEEPZ-SEZ Jewel for Highest Export Performance in Electronics Hardware", "issuer": "Union Minister of State for Power", "description": "Trophy and certificate to Celetronix India, received by M. L. Tandon." },
-  { "year": "2001-02", "title": "Department of IT Award for Excellence in Electronics, First Prize", "issuer": "Government of India, Department of Information Technology", "description": "Awarded to Celetronix India Pvt. Ltd." },
-  { "year": "2001-02", "title": "ELCINA Award of Excellence for Outstanding Achievements in Exports", "issuer": "ELCINA, presented by Prof. Yashpal", "description": "Awarded to Celetronix India Pvt. Ltd." }
+  {
+    "year": "1978-79",
+    "title": "First export recognition",
+    "issuer": "State Committee for Export Promotion, Maharashtra",
+    "description": "Awarded to Tandon Magnetics for export of electronic and electrical products."
+  },
+  {
+    "year": "1979-80",
+    "title": "National Award for Outstanding Export Performance",
+    "issuer": "President of India (Giani Zail Singh)",
+    "description": "Awarded to Tandon Magnetics India Pvt. Ltd (TMIPL). Exports achieved: Rs. 0.21 Crores. Received by Mr. M. L. Tandon.",
+    "image": "/images/awards/1979-80-national-award.jpg"
+  },
+  {
+    "year": "1981-82",
+    "title": "Certificate for Export Recognition (Electronic & Electrical Products)",
+    "issuer": "Shri Sudhakarrao Naik, Chairman, State Committee for Export Promotion, Maharashtra State, Bombay",
+    "description": "Awarded to Tandon Magnetics India Pvt Ltd (TMIPL). Exports achieved: Rs. 2.45 Crores. Received by Mr. M. L. Tandon.",
+    "image": "/images/awards/1981-82-export-recognition.jpg"
+  },
+  {
+    "year": "1990-91",
+    "title": "Trophy for Meritorious Performance in the Field of Export",
+    "issuer": "Shri Pranab Mukherjee, Hon'ble Minister of Commerce, New Delhi",
+    "description": "Awarded to Eastern Peripherals Limited (EPL). Received by Mr. M. L. Tandon.",
+    "image": "/images/awards/1990-91-meritorious-performance.jpg"
+  },
+  {
+    "year": "1991-92",
+    "title": "Trophy (ECSEPC) Highest Export Performance amongst FTZ/100% EOUs",
+    "issuer": "Shri Pranab Mukherjee, Hon'ble Minister for Commerce, Govt. of India",
+    "description": "Awarded to Eastern Peripherals Limited (EPL). Exports achieved: Rs. 30.74 Crores. Received by Mr. M. L. Tandon.",
+    "image": "/images/awards/1991-92-highest-export.jpg"
+  },
+  {
+    "year": "1992-93",
+    "title": "Award for Best Exporter of Indian EPZ's Industries Association",
+    "issuer": "Shri Manmohan Singh, Union Finance Minister, Govt. of India",
+    "description": "Awarded to Advance Technology Devices (ATD) and Ultra Tek Devices Ltd (UTDL). Received by Mr. M. L. Tandon.",
+    "image": "/images/awards/1992-93-best-exporter.jpg"
+  },
+  {
+    "year": "1992-93",
+    "title": "Trophy (ECSEPC) Highest Growth in Exports 'Computer Hardware Amongst FTZ/100% EOUs'",
+    "issuer": "Shri Pranab Mukherjee, Hon'ble Minister for Commerce, Govt. of India",
+    "description": "Awarded to Eastern Peripherals Limited (EPL). Exports achieved: Rs. 19.30 Crores. Received by Mr. M. L. Tandon."
+  },
+  {
+    "year": "1993-94",
+    "title": "National Export Award",
+    "issuer": "President of India (Shankar Dayal Sharma)",
+    "description": "Awarded to Advance Technology Devices and Tancom Electronics."
+  },
+  {
+    "year": "1993-94",
+    "title": "Highest Export Performance among EPZ, EOU, EHTP and STP units",
+    "issuer": "Electronics and Computer Software Export Promotion Council (ESC)",
+    "description": "Trophy presented by Pranab Mukherjee, Minister for Commerce, to Advance Technology Devices."
+  },
+  {
+    "year": "1993-94",
+    "title": "Shield (ECSEPC) Highest Growth in Exports: Computer Hardware",
+    "issuer": "Shri Pranab Mukherjee, Hon'ble Minister for Commerce, Govt. of India",
+    "description": "Awarded to Tancom Electronics (TE) amongst EPZ/100% EOU/EHTP/STP Units. Exports achieved: Rs. 48.36 Crores. Received by Mr. M. L. Tandon.",
+    "image": "/images/awards/1993-94-ecsepc-awards.jpg"
+  },
+  {
+    "year": "1993-94",
+    "title": "Shield (ECSEPC) Highest Growth in Exports: Instruments/Office/Medical Equipments",
+    "issuer": "Shri Pranab Mukherjee, Hon'ble Minister for Commerce, Govt. of India",
+    "description": "Awarded to Ultra Tek Devices Limited (UTDL) amongst EPZS/EHTP/STP Units. Exports achieved: Rs. 77.13 Crores. Received by Mr. M. L. Tandon."
+  },
+  {
+    "year": "1993-94",
+    "title": "Trophy (ECSEPC) Highest Export",
+    "issuer": "Shri Pranab Mukherjee, Hon'ble Minister for Commerce, Govt. of India",
+    "description": "Awarded to Advance Technology Devices (ATD). Exports achieved: Rs. 70.08 Crores. Received by Mr. M. L. Tandon."
+  },
+  {
+    "year": "1994-95",
+    "title": "Special Award for Outstanding Export in Computer Hardware Amongst Non-SSI Units",
+    "issuer": "Shri. P. Chidambaram, Hon'ble Minister of State for Commerce, New Delhi",
+    "description": "Awarded to Tancom Electronics (TE). Exports achieved: Rs. 58.73 Crores. Received by Mr. M. L. Tandon.",
+    "image": "/images/awards/1994-95-special-award.jpg"
+  },
+  {
+    "year": "1994-95",
+    "title": "Special Award for Outstanding Export in Computer Hardware Amongst Non-SSI Units",
+    "issuer": "Shri. P. Chidambaram, Hon'ble Minister of State for Commerce, New Delhi",
+    "description": "Awarded to Advance Technology Devices (ATD). Exports achieved: Rs. 79.14 Crores. Received by Mr. M. L. Tandon."
+  },
+  {
+    "year": "1995-96",
+    "title": "MAIT Trophy for Excellence in IT Hardware Exports",
+    "issuer": "MAIT, presented by Dr. B. B. Ramaiah, Minister of State for Commerce",
+    "description": "Awarded to the Tandon Group of Companies. Exports achieved: Rs. 383.0 Crores. Received by Mr. M. L. Tandon.",
+    "image": "/images/awards/1995-96-mait-excellence.jpg"
+  },
+  {
+    "year": "1996-97",
+    "title": "Trophy & Certificate for Third Highest Export on All-India Basis",
+    "issuer": "Shri Atal Bihari Vajpayee, Hon'ble Prime Minister of India",
+    "description": "Award of Excellence presented by Prime Minister Atal Bihari Vajpayee to Tancom Electronics / Mr. M. L. Tandon for achieving exports of Rs. 144.80 Crores.",
+    "image": "/images/awards/1996-97-vajpayee-award.jpg"
+  },
+  {
+    "year": "1997-98",
+    "title": "Electronics Man of the Year",
+    "issuer": "Electronic Industries Association of India (ELCINA)",
+    "description": "Awarded to M. L. Tandon as Chairman, Tandon Group of Companies."
+  },
+  {
+    "year": "1999-2000",
+    "title": "State Award for Best Exporters in Maharashtra",
+    "issuer": "Government of Maharashtra",
+    "description": "Awarded to Advance Technology Devices and Tancom Electronics."
+  },
+  {
+    "year": "2000-01",
+    "title": "SEEPZ-SEZ Jewel for Highest Export Performance in Electronics Hardware",
+    "issuer": "Union Minister of State for Power",
+    "description": "Trophy and certificate to Celetronix India, received by M. L. Tandon."
+  },
+  {
+    "year": "2001-02",
+    "title": "Department of IT Award for Excellence in Electronics, First Prize",
+    "issuer": "Government of India, Department of Information Technology",
+    "description": "Awarded to Celetronix India Pvt. Ltd."
+  },
+  {
+    "year": "2001-02",
+    "title": "ELCINA Award of Excellence for Outstanding Achievements in Exports",
+    "issuer": "ELCINA, presented by Prof. Yashpal",
+    "description": "Awarded to Celetronix India Pvt. Ltd."
+  }
 ]

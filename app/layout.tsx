@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { cormorant, inter } from "@/lib/fonts";
+import { cormorant, inter, cinzel } from "@/lib/fonts";
 import { site } from "@/lib/site";
 import { siteUrl } from "@/lib/url";
 import Navbar from "@/components/layout/Navbar";
@@ -34,7 +34,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${cormorant.variable} ${inter.variable}`}
+      className={`${cormorant.variable} ${inter.variable} ${cinzel.variable}`}
     >
       <body>
         <MotionProvider>

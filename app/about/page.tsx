@@ -1,6 +1,6 @@
+import Image from "next/image";
 import { site } from "@/lib/site";
 import Button from "@/components/ui/Button";
-import ImagePlaceholder from "@/components/ui/ImagePlaceholder";
 import Reveal from "@/components/ui/Reveal";
 import type { Metadata } from "next";
 
@@ -24,14 +24,14 @@ export default function AboutPage() {
       <section className="bg-royal-950 text-white pt-32 pb-24 md:pt-40 md:pb-32">
         <div className="container mx-auto px-4 md:px-8 text-center max-w-4xl">
           <Reveal>
-            <span className="block text-sm font-semibold uppercase tracking-widest text-gold/80 mb-6">
+            <span className="block text-sm font-semibold uppercase tracking-widest text-gold/80 mb-6 font-royal">
               About
             </span>
-            <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl leading-tight mb-8">
+            <h1 className="font-royal text-5xl md:text-6xl lg:text-7xl leading-tight mb-6 text-white uppercase tracking-wide">
               About {site.founderName}
             </h1>
-            <p className="text-xl md:text-2xl text-white/70 font-serif">
-              [TO BE FILLED: intro line]
+            <p className="text-xl md:text-2xl text-gold-light/90 font-serif max-w-2xl mx-auto font-light leading-relaxed">
+              Pioneering India&apos;s electronics hardware manufacturing and exports across five decades of leadership.
             </p>
           </Reveal>
         </div>
@@ -44,11 +44,31 @@ export default function AboutPage() {
             {/* Left 4 cols sticky portrait */}
             <div className="lg:col-span-4 lg:sticky lg:top-32 relative z-0">
               <Reveal>
-                <ImagePlaceholder
-                  aspectRatio="4/5"
-                  description="PLACEHOLDER: portrait"
-                  className="border border-gold/10"
-                />
+                <div className="relative group">
+                  {/* Subtle decorative gold glow accent */}
+                  <div className="absolute -inset-1.5 bg-gradient-to-b from-gold/30 via-gold/10 to-transparent rounded-sm blur-[1px] opacity-75 group-hover:opacity-100 transition duration-500" />
+                  
+                  <div className="relative bg-royal-950 p-2 sm:p-2.5 rounded-sm border border-gold/25 shadow-2xl overflow-hidden">
+                    <div className="relative aspect-[4/5] sm:aspect-square lg:aspect-[4/5] w-full overflow-hidden rounded-sm bg-royal-900">
+                      <Image
+                        src="/images/ml-tandon-portrait.jpg"
+                        alt="Manohar Lal Tandon, Chairman of Tandon Group"
+                        fill
+                        priority
+                        className="object-cover object-top hover:scale-[1.02] transition-transform duration-700 ease-out"
+                        sizes="(max-width: 1024px) 100vw, 33vw"
+                      />
+                    </div>
+                    <div className="pt-4 pb-2 px-3 text-center border-t border-gold/20 mt-2">
+                      <h3 className="font-royal text-lg sm:text-xl text-white font-medium tracking-wide">
+                        Manohar Lal Tandon
+                      </h3>
+                      <p className="text-xs uppercase tracking-[0.2em] text-gold font-sans mt-1">
+                        Founder &amp; Chairman
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </Reveal>
             </div>
 

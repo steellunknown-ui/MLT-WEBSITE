@@ -56,7 +56,6 @@ export const site = {
     { label: "Ventures", href: "/ventures" },
     { label: "Achievements", href: "/achievements" },
     { label: "Media", href: "/media" },
-    { label: "Blog", href: "/blog" },
     { label: "Contact", href: "/contact" },
   ],
   pages: {

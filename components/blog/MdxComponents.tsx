@@ -1,4 +1,4 @@
-﻿import type { MDXComponents } from "mdx/types";
+import type { MDXComponents } from "mdx/types";
 import type { ComponentPropsWithoutRef } from "react";
 
 /**
@@ -76,7 +76,7 @@ export const mdxComponents: MDXComponents = {
         fontSize: "1.125rem",
         fontStyle: "italic",
         color: "inherit",
-        opacity: 0.85,
+        opacity: 1,
       }}
       {...props}
     >
@@ -124,7 +124,7 @@ export const mdxComponents: MDXComponents = {
       <a
         href={href}
         style={{
-          color: "#B8960C",
+          color: "#0f2841",
           textDecoration: "underline",
           textUnderlineOffset: "3px",
         }}

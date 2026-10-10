@@ -1,6 +1,7 @@
 import { site } from "@/lib/site";
 import { getAchievements } from "@/lib/content";
 import Reveal from "@/components/ui/Reveal";
+import ImageLightbox from "@/components/ui/ImageLightbox";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -30,8 +31,17 @@ export default function AchievementsPage() {
   return (
     <div className="w-full">
       {/* HEADER */}
-      <section className="bg-royal-950 text-white pt-32 pb-24 md:pt-40 md:pb-32">
-        <div className="container mx-auto px-4 md:px-8 text-center max-w-4xl">
+      <section className="relative bg-royal-950 text-white pt-32 pb-24 md:pt-40 md:pb-32 overflow-hidden">
+        {/* Background Image with Overlay */}
+        <div 
+          className="absolute inset-0 opacity-30 mix-blend-luminosity"
+          style={{
+            backgroundImage: "url('/images/achievements-hero.png')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+        />
+        <div className="relative z-10 container mx-auto px-4 md:px-8 text-center max-w-4xl">
           <Reveal>
             <span className="block text-xs font-semibold uppercase tracking-widest text-gold mb-6">
               Achievements
@@ -67,7 +77,7 @@ export default function AchievementsPage() {
                           {item.year}
                         </h3>
                       </div>
-                      <div className="md:col-span-9 flex flex-col justify-center">
+                      <div className={`md:col-span-6 flex flex-col justify-center ${!item.image ? 'md:col-span-9' : ''}`}>
                         <h4 className="font-serif text-2xl md:text-3xl text-royal-950 mb-3">
                           {item.title}
                         </h4>
@@ -80,6 +90,11 @@ export default function AchievementsPage() {
                           </p>
                         )}
                       </div>
+                      {item.image && (
+                        <div className="md:col-span-3 mt-4 md:mt-0 flex items-center justify-end">
+                          <ImageLightbox src={item.image} alt={item.title} />
+                        </div>
+                      )}
                     </div>
                   </Reveal>
                 ))}

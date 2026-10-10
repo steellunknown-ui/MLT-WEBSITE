@@ -1,11 +1,12 @@
 import { site } from "@/lib/site";
-import { getVentures } from "@/lib/content";
-import { getAllPosts } from "@/lib/blog";
+import { getVentures, getAchievements } from "@/lib/content";
 import Button from "@/components/ui/Button";
-import ImagePlaceholder from "@/components/ui/ImagePlaceholder";
 import Reveal from "@/components/ui/Reveal";
 import Link from "next/link";
 import type { Metadata } from "next";
+
+import HeroSlider from "@/components/home/HeroSlider";
+import AchievementsCarousel from "@/components/home/AchievementsCarousel";
 
 export const metadata: Metadata = {
   title: `${site.founderName} - ${site.title}`,
@@ -22,67 +23,12 @@ export const metadata: Metadata = {
 
 export default function HomePage() {
   const ventures = getVentures().slice(0, 4);
-  const posts = getAllPosts().slice(0, 3);
+  const achievements = getAchievements().filter((a) => Boolean(a.image));
 
   return (
     <main>
-      {/* 1. HERO */}
-      <section className="bg-royal-950 text-white min-h-[90vh] flex items-center relative overflow-hidden">
-        <div className="container mx-auto px-4 md:px-8 py-24 lg:py-0 w-full relative z-10 flex flex-col lg:flex-row items-center gap-16 lg:gap-8">
-          {/* Left 7 cols */}
-          <div className="w-full lg:w-7/12 relative pl-6 lg:pl-10">
-            {/* Thin gold vertical hairline */}
-            <div className="absolute top-0 bottom-0 left-0 w-px bg-gold/30"></div>
-            
-            <Reveal delay={0.1}>
-              <span className="block text-xs md:text-sm font-semibold uppercase tracking-[0.2em] text-gold/80 mb-6 md:mb-8">
-                {site.title}
-              </span>
-            </Reveal>
-            
-            <Reveal delay={0.2}>
-              <h1 className="font-serif text-6xl md:text-8xl lg:text-[7.5rem] leading-[1.05] mb-6 md:mb-8 text-white tracking-tight">
-                {site.founderName}
-              </h1>
-            </Reveal>
-            
-            <Reveal delay={0.3}>
-              <p className="text-xl md:text-2xl lg:text-3xl text-white/90 font-serif mb-6 max-w-2xl leading-relaxed">
-                {site.tagline}
-              </p>
-              <p className="text-lg md:text-xl text-white/60 mb-12 max-w-2xl leading-relaxed">
-                {site.description}
-              </p>
-            </Reveal>
-            
-            <Reveal delay={0.4}>
-              <div className="flex flex-wrap items-center gap-6">
-                <Button as="link" href="/journey" size="lg">
-                  Read the Journey
-                </Button>
-                <Button as="link" href="/contact" variant="secondary" size="lg">
-                  Get in touch
-                </Button>
-              </div>
-            </Reveal>
-          </div>
-
-          {/* Right 5 cols */}
-          <div className="w-full lg:w-5/12 lg:-mr-12 relative z-0">
-            <Reveal delay={0.5} distance={40}>
-              <div className="relative">
-                {/* Decorative border frame offset */}
-                <div className="absolute -inset-4 border border-gold/10 hidden md:block"></div>
-                <ImagePlaceholder
-                  aspectRatio="4/5"
-                  description="PLACEHOLDER: formal portrait of M. L. Tandon"
-                  className="border border-gold/20 shadow-none relative z-10"
-                />
-              </div>
-            </Reveal>
-          </div>
-        </div>
-      </section>
+      {/* 1. HERO SLIDER */}
+      <HeroSlider />
 
       {/* 2. INTRODUCTION */}
       <section className="bg-paper text-ink py-24 md:py-32">
@@ -180,25 +126,10 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 5. IMAGE BAND */}
-      <section className="bg-paper py-20">
-        <div className="container mx-auto px-4 md:px-8">
-          <Reveal>
-            <div className="max-w-[1200px] mx-auto">
-              <ImagePlaceholder
-                aspectRatio="21/9"
-                description="PLACEHOLDER: event or factory photograph"
-                className="rounded-sm border border-gold/10"
-              />
-              <p className="mt-4 text-center text-sm font-serif italic text-ink/60">
-                [TO BE FILLED: caption]
-              </p>
-            </div>
-          </Reveal>
-        </div>
-      </section>
+      {/* 5. ACHIEVEMENTS CAROUSEL (Option A: Royal Award Cards Slider) */}
+      <AchievementsCarousel achievements={achievements} />
 
-      {/* 6. LATEST FROM THE BLOG */}
+      {/* 6. LATEST FROM THE BLOG (HIDDEN FOR NOW) 
       <section className="bg-paper text-ink py-24 md:py-32 border-t border-gold/10">
         <div className="container mx-auto px-4 md:px-8">
           <Reveal>
@@ -215,7 +146,6 @@ export default function HomePage() {
 
           {posts.length > 0 ? (
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
-              {/* First post (large) */}
               <div className="lg:col-span-7">
                 <Reveal delay={0.1}>
                   <Link href={`/blog/${posts[0].slug}`} className="group block">
@@ -239,7 +169,6 @@ export default function HomePage() {
                           {posts[0].excerpt}
                         </p>
                         <div className="text-xs font-medium text-ink/40 tracking-wide uppercase">
-                          {/* Note: In a real app we'd need to avoid hydration mismatch with local dates */}
                           {posts[0].date} &middot; {posts[0].readTime}
                         </div>
                       </div>
@@ -248,7 +177,6 @@ export default function HomePage() {
                 </Reveal>
               </div>
 
-              {/* Smaller posts */}
               <div className="lg:col-span-5 flex flex-col gap-8">
                 {posts.slice(1).map((post, idx) => (
                   <Reveal key={post.slug} delay={0.2 + (idx * 0.1)} className="flex-1">
@@ -281,6 +209,7 @@ export default function HomePage() {
           )}
         </div>
       </section>
+      */}
 
       {/* 7. QUOTE BLOCK */}
       <section className="bg-royal-950 text-white py-24 md:py-32 relative">

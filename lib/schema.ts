@@ -1,4 +1,4 @@
-﻿import { z } from "zod";
+import { z } from "zod";
 
 // ---------------------------------------------------------------------------
 // BlogFrontmatter
@@ -51,6 +51,7 @@ export const AchievementSchema = z.object({
   title: z.string(),
   issuer: z.string(),
   description: z.string().optional(),
+  image: z.string().optional(),
 });
 
 export type Achievement = z.infer<typeof AchievementSchema>;
