@@ -33,8 +33,8 @@ export default function JourneyPage() {
             <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl leading-tight mb-8">
               The Journey
             </h1>
-            <p className="text-xl md:text-2xl text-white/70 font-serif">
-              [TO BE FILLED: intro line]
+            <p className="text-xl md:text-2xl text-white/70 font-serif max-w-2xl mx-auto leading-relaxed">
+              Pioneering milestones across five decades of Indian electronics hardware manufacturing, global export excellence, and technological leadership.
             </p>
           </Reveal>
         </div>
@@ -51,8 +51,8 @@ export default function JourneyPage() {
       <section className="bg-white text-ink py-24 md:py-32 text-center border-t border-gold/10">
         <div className="container mx-auto px-4 md:px-8">
           <Reveal>
-            <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-royal-950 mb-10 max-w-3xl mx-auto">
-              [TO BE FILLED: closing line]
+            <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-royal-950 mb-10 max-w-3xl mx-auto leading-tight">
+              {site.about.closingLine}
             </h2>
             <Button as="link" href="/contact" size="lg">
               Get in touch

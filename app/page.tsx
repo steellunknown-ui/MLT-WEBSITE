@@ -230,8 +230,8 @@ export default function HomePage() {
       <section className="bg-white text-ink py-24 md:py-32 text-center">
         <div className="container mx-auto px-4 md:px-8">
           <Reveal>
-            <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-royal-950 mb-10 max-w-3xl mx-auto">
-              [TO BE FILLED: closing line]
+            <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-royal-950 mb-10 max-w-3xl mx-auto leading-tight">
+              {site.about.closingLine}
             </h2>
             <Button as="link" href="/contact" size="lg">
               Get in touch

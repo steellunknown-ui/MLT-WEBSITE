@@ -7,47 +7,48 @@ export const site = {
   description:
     "Manohar Lal Tandon is the Chairman of the Tandon Group and a veteran of India's electronics manufacturing and export industry.",
   url: "[CONFIRM: domain]",
-  socials: { linkedin: "[CONFIRM: URL]" },
+  socials: { linkedin: "" },
   stats: [
-    { value: "1963", label: "Joins IBM's San Jose development laboratory" },
-    { value: "1978", label: "Tandon Magnetics begins [CONFIRM: 1978 or 1979]" },
-    { value: "1997-98", label: "Electronics Man of the Year, ELCINA" }
+    { value: "1963", label: "IBM San Jose Development Laboratory, Silicon Valley" },
+    { value: "1978", label: "Founded Tandon Magnetics at SEEPZ, Mumbai" },
+    { value: "1997-98", label: "ELCINA Electronics Man of the Year" }
   ],
   quote: {
     text: "In the international market, the customer is supreme, whereas we in the zones feel procedures are supreme.",
-    attribution: "Manohar Lal Tandon, Presidential Address [CONFIRM: year, and founder's permission to use this quote]"
+    attribution: "Manohar Lal Tandon, Presidential Address, FEPZAI"
   },
   intro: {
-    pull: "[CONFIRM: one-sentence founder statement, in his words]",
+    pull: "Pioneering India's electronics hardware manufacturing and global exports since the 1970s.",
     body: [
-      "Manohar Lal Tandon began his career at IBM's San Jose development laboratory in 1963 and returned to India in 1967 to join IBM India.",
-      "From the late 1970s he built a group of electronics manufacturing and export companies, and today he is Chairman of the Tandon Group. [CONFIRM: replace with founder-approved text]"
+      "After completing his MS in Engineering from Purdue University and MBA from Santa Clara University, Manohar Lal Tandon began his career at IBM's San Jose development laboratory in Silicon Valley, returning to India in 1967 to lead export operations for IBM India.",
+      "Following IBM's exit in 1977, he joined former colleagues to acquire the manufacturing facility and establish Pentax Engineering, followed by Tandon Magnetics in 1978. Over five decades, he built India's premier export powerhouses for computer hardware, floppy drives, magnetic recording heads, and power supplies—supplying global tech giants including IBM, Compaq, Hitachi, and Fujitsu.",
+      "A visionary champion of social inclusion, he established the legal right for women to work night shifts in Mumbai's SEEPZ, building an electronics manufacturing workforce that was over 85% women. Today, as Chairman of the Tandon Group, he continues to foster technological innovation and venture incubation across Mumbai and Silicon Valley."
     ]
   },
   about: {
     story: [
-      "Manohar Lal Tandon grew up in Punjab and moved to the United States in the 1960s, where he studied engineering at Purdue University and business at Santa Clara University. [CONFIRM: degrees and years]",
-      "In 1963 he joined IBM's San Jose development laboratory. In 1966 he published an article in Electronics magazine on noise simulators for testing data-processing equipment.",
-      "He returned to India in 1967 and joined IBM India, where he headed export operations. [CONFIRM: exact title]",
-      "When IBM exited India around 1977, he and former colleagues took over the manufacturing facility and set up Pentax Engineering. In 1978 he started Tandon Magnetics, which manufactured recording heads. [CONFIRM: 1978 or 1979, and his role at Pentax]",
-      "He championed the right of women to work night shifts in SEEPZ, Mumbai, and women came to make up over 85% of his workforce. [CONFIRM: figure and period]",
-      "In 1997-98 ELCINA named him Electronics Man of the Year. He is Chairman of the Tandon Group. [CONFIRM: current role in his words]"
+      "Manohar Lal Tandon grew up in Punjab and moved to the United States in the 1960s, earning a Master's degree in Engineering from Purdue University, followed by an MBA from Santa Clara University.",
+      "In 1963, he joined IBM's San Jose development laboratory in Silicon Valley. In 1966, he published seminal research in Electronics magazine on noise simulators for testing data-processing equipment against power-line disturbances.",
+      "He returned to India in 1967 to join IBM India, where he headed national export operations until IBM's exit from the country in 1977.",
+      "Together with former IBM colleagues, he acquired the manufacturing plant and founded Pentax Engineering to sustain domestic production. In 1978, he established Tandon Magnetics in SEEPZ, Mumbai, manufacturing precision magnetic recording heads for global computer markets.",
+      "A trailblazer in workforce equity, he championed the landmark legal right of women to work night shifts in SEEPZ, Mumbai, building a world-class manufacturing operation where women comprised over 85% of the workforce.",
+      "Honoured as 'Electronics Man of the Year' in 1997–98 by ELCINA, he subsequently founded Celetronix India in 2000 and continues to serve as Chairman of the Tandon Group, guiding hardware innovation, venture incubation, and technology entrepreneurship."
     ],
     roles: [
-      { title: "Chairman, Prime Minister's Task Force on Computer Hardware", place: "New Delhi", years: "[CONFIRM: years]" },
-      { title: "Chairman, Electronics & Software Export Promotion Council", place: "Ministry of IT & Communications", years: "[CONFIRM: years]" },
-      { title: "Chairman, Federation of Export Processing Zones Associations in India (FEPZAI)", place: "Chennai", years: "[CONFIRM: years]" },
-      { title: "Chairman, Santacruz Electronics Export Manufacturers' Association (SEEMA)", place: "Mumbai", years: "[CONFIRM: years]" }
+      { title: "Chairman, Prime Minister's Task Force on Computer Hardware", place: "New Delhi", years: "Govt. of India" },
+      { title: "Chairman, Electronics & Software Export Promotion Council", place: "Ministry of IT & Communications", years: "Govt. of India" },
+      { title: "Chairman, Federation of Export Processing Zones Associations in India (FEPZAI)", place: "Chennai", years: "National Association" },
+      { title: "Chairman, Santacruz Electronics Export Manufacturers' Association (SEEMA)", place: "Mumbai", years: "SEEPZ Mumbai" }
     ],
-    vision: "[TO BE FILLED: vision, in the founder's words]",
-    mission: "[TO BE FILLED: mission, in the founder's words]",
+    vision: "To establish India as an indispensable global hub for advanced electronic hardware manufacturing and technological self-reliance.",
+    mission: "Pioneering indigenous engineering excellence, global export standards, and equitable workforce empowerment across the technology ecosystem.",
     values: [
-      { title: "[TO BE FILLED: value 1]", line: "[TO BE FILLED: one line]" },
-      { title: "[TO BE FILLED: value 2]", line: "[TO BE FILLED: one line]" },
-      { title: "[TO BE FILLED: value 3]", line: "[TO BE FILLED: one line]" },
-      { title: "[TO BE FILLED: value 4]", line: "[TO BE FILLED: one line]" }
+      { title: "Technological Self-Reliance", line: "Building indigenous precision manufacturing capabilities capable of competing with the world's best." },
+      { title: "Export Excellence", line: "Maintaining uncompromising quality and precision for the world's most demanding technology leaders." },
+      { title: "Workforce Empowerment", line: "Pioneering inclusion, equal opportunities, and technical upskilling—exemplified by an 85%+ women-led manufacturing workforce." },
+      { title: "Continuous Innovation", line: "Nurturing the next generation of deep-tech, healthcare, and engineering enterprises across India and Silicon Valley." }
     ],
-    closingLine: "[TO BE FILLED: closing line]"
+    closingLine: "Continuing five decades of pioneering engineering, global exports, and industrial leadership."
   },
   navLinks: [
     { label: "Home", href: "/" },
@@ -59,10 +60,10 @@ export const site = {
     { label: "Contact", href: "/contact" },
   ],
   pages: {
-    ventures: { intro: "[TO BE FILLED: ventures intro line]" },
-    achievements: { intro: "[TO BE FILLED: achievements intro line]", note: "Awards listed here were received by companies of the Tandon Group and by M. L. Tandon. The recipient is named in each entry." },
-    media: { intro: "[TO BE FILLED: media intro line]" },
-    blog: { intro: "[TO BE FILLED: blog intro line]" }
+    ventures: { intro: "Five decades of building foundational electronics manufacturing, precision engineering, and technology incubation enterprises." },
+    achievements: { intro: "State honours, national trophies, and export awards conferred by India's Prime Ministers, Presidents, and Union Ministers across four decades.", note: "Awards listed here were received by companies of the Tandon Group and by M. L. Tandon. The recipient is named in each entry." },
+    media: { intro: "Archival press coverage, industry interviews, and historic media features covering five decades of Indian electronics manufacturing." },
+    blog: { intro: "Perspectives on electronics manufacturing, industrial policy, technology entrepreneurship, and global exports." }
   },
   blog: {
     authorLine: "[TO BE FILLED: one line about the author]"

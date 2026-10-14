@@ -5,7 +5,7 @@ const currentYear = new Date().getFullYear();
 
 const contactLinks = [
   { label: "Mumbai, India", href: null },
-  { label: "[CONFIRM: email]", href: null },
+  { label: "Silicon Valley, USA", href: null },
 ];
 
 export default function Footer() {
@@ -77,24 +77,16 @@ export default function Footer() {
           {/* Column 4: Social */}
           <div>
             <p className="mb-4 font-sans text-xs font-semibold uppercase tracking-widest text-gold">
-              Connect
+              Inquiries
             </p>
             <ul className="flex flex-col gap-2" role="list">
               <li>
-                {site.socials.linkedin !== "[CONFIRM: URL]" ? (
-                  <a
-                    href={site.socials.linkedin}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="font-sans text-sm text-white/60 transition-colors duration-200 hover:text-white"
-                  >
-                    LinkedIn
-                  </a>
-                ) : (
-                  <span className="font-sans text-sm text-white/60 italic">
-                    LinkedIn [CONFIRM]
-                  </span>
-                )}
+                <Link
+                  href="/contact"
+                  className="font-sans text-sm text-white/60 transition-colors duration-200 hover:text-white"
+                >
+                  Contact Office &rarr;
+                </Link>
               </li>
             </ul>
           </div>
