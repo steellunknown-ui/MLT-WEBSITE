@@ -23,6 +23,28 @@ export const site = {
       "After completing his MS in Engineering from Purdue University and MBA from Santa Clara University, Manohar Lal Tandon began his career at IBM's San Jose development laboratory in Silicon Valley, returning to India in 1967 to lead export operations for IBM India.",
       "Following IBM's exit in 1977, he joined former colleagues to acquire the manufacturing facility and establish Pentax Engineering, followed by Tandon Magnetics in 1978. Over five decades, he built India's premier export powerhouses for computer hardware, floppy drives, magnetic recording heads, and power supplies—supplying global tech giants including IBM, Compaq, Hitachi, and Fujitsu.",
       "A visionary champion of social inclusion, he established the legal right for women to work night shifts in Mumbai's SEEPZ, building an electronics manufacturing workforce that was over 85% women. Today, as Chairman of the Tandon Group, he continues to foster technological innovation and venture incubation across Mumbai and Silicon Valley."
+    ],
+    highlights: [
+      {
+        tag: "Silicon Valley Genesis",
+        title: "Purdue & IBM San Jose",
+        description: "MS Engineering (Purdue), MBA (Santa Clara); published seminal power-line testing research at IBM's Silicon Valley lab before returning to lead IBM India exports."
+      },
+      {
+        tag: "Global Tech Exports",
+        title: "Micro-Precision Hardware",
+        description: "Built SEEPZ manufacturing powerhouses producing floppy drives, magnetic heads, and power supplies for IBM, Apple, Compaq, and Hitachi."
+      },
+      {
+        tag: "Social Impact & Equity",
+        title: "85%+ Women Workforce",
+        description: "Established the landmark legal right for women to work night shifts in Mumbai's SEEPZ, creating thousands of high-precision cleanroom careers."
+      },
+      {
+        tag: "National Policy Leadership",
+        title: "Advisory to Govt. of India",
+        description: "Chaired the Prime Minister's Task Force on Computer Hardware, the Electronics & Software EPC (ESC), and the National Federation of EPZs (FEPZAI)."
+      }
     ]
   },
   about: {

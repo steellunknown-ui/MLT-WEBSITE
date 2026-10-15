@@ -1,7 +1,9 @@
 import { site } from "@/lib/site";
-import { getVentures, getAchievements } from "@/lib/content";
+import { getVentures, getAchievements, getProducts } from "@/lib/content";
 import Button from "@/components/ui/Button";
 import Reveal from "@/components/ui/Reveal";
+import ImageLightbox from "@/components/ui/ImageLightbox";
+import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
 
@@ -24,6 +26,7 @@ export const metadata: Metadata = {
 export default function HomePage() {
   const ventures = getVentures().slice(0, 4);
   const achievements = getAchievements().filter((a) => Boolean(a.image));
+  const products = getProducts();
 
   return (
     <main>
@@ -31,30 +34,117 @@ export default function HomePage() {
       <HeroSlider />
 
       {/* 2. INTRODUCTION */}
-      <section className="bg-paper text-ink py-24 md:py-32">
+      <section className="bg-paper text-ink py-20 md:py-28">
         <div className="container mx-auto px-4 md:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
+          {/* Row 1: Vision Pull Quote & Narrative Story (Parallel) */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start mb-14 lg:mb-16">
             <div className="lg:col-span-5">
               <Reveal>
-                <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl leading-snug text-royal-950 border-l-2 border-gold pl-6">
-                  {site.intro.pull}
-                </h2>
+                <div className="border-l-2 border-gold pl-6 py-1">
+                  <span className="text-xs uppercase font-mono tracking-widest text-gold font-semibold mb-3 block">
+                    Foundational Legacy
+                  </span>
+                  <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl leading-snug text-royal-950">
+                    {site.intro.pull}
+                  </h2>
+                </div>
               </Reveal>
             </div>
+
             <div className="lg:col-span-7">
               <Reveal delay={0.1}>
-                <div className="max-w-[65ch] space-y-6 text-lg text-ink/80">
+                <div className="space-y-5 text-lg text-ink/80 leading-relaxed">
                   {site.intro.body.map((paragraph, idx) => (
                     <p key={idx}>{paragraph}</p>
                   ))}
-                  <div className="pt-4">
-                    <Link
-                      href="/about"
-                      className="inline-flex items-center gap-2 text-gold font-medium hover:text-royal-900 transition-colors"
-                    >
-                      Read more <span aria-hidden="true">&rarr;</span>
-                    </Link>
+                </div>
+              </Reveal>
+            </div>
+          </div>
+
+          {/* Row 2: Parallel Archival Photo & Key Milestones Grid */}
+          <div className="pt-12 border-t border-gold/25 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+            {/* Left: Archival Cleanroom Image */}
+            <div className="lg:col-span-5">
+              <Reveal delay={0.15}>
+                <ImageLightbox
+                  src="/images/seepz-cleanroom-manufacturing.jpg"
+                  alt="Mr. M. L. Tandon demonstrating micro-precision magnetic recording head assembly with technicians inside the SEEPZ cleanroom in Mumbai"
+                  className="group block w-full text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-gold"
+                >
+                  <div className="relative aspect-[4/3] w-full overflow-hidden rounded-xs border border-gold/30 bg-royal-950/5 shadow-md transition-all duration-300 group-hover:border-gold group-hover:shadow-xl">
+                    <Image
+                      src="/images/seepz-cleanroom-manufacturing.jpg"
+                      alt="Mr. M. L. Tandon demonstrating micro-precision magnetic recording head assembly with technicians inside the SEEPZ cleanroom in Mumbai"
+                      fill
+                      sizes="(max-width: 1024px) 100vw, 40vw"
+                      className="object-cover object-center transition-transform duration-500 group-hover:scale-105 cursor-zoom-in"
+                      priority
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-royal-950/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-3.5">
+                      <span className="text-xs text-white/95 flex items-center gap-1.5 font-medium tracking-wide">
+                        <svg className="w-4 h-4 text-gold flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+                        </svg>
+                        Click to expand archival photograph
+                      </span>
+                    </div>
                   </div>
+                </ImageLightbox>
+                <p className="mt-2.5 text-xs text-ink/65 font-sans italic border-l border-gold/40 pl-3 leading-relaxed">
+                  Historical SEEPZ cleanroom, Mumbai: Mr. M. L. Tandon reviewing precision magnetic head assembly with visiting dignitaries and technicians.
+                </p>
+              </Reveal>
+            </div>
+
+            {/* Right: Key Milestones Cards & Actions */}
+            <div className="lg:col-span-7 flex flex-col justify-between">
+              <Reveal delay={0.2}>
+                <div className="flex items-center gap-2 mb-4">
+                  <span className="w-1.5 h-1.5 rounded-full bg-gold inline-block" />
+                  <span className="text-xs uppercase font-mono tracking-widest text-royal-950/70 font-semibold">
+                    Foundational Milestones &amp; Impact
+                  </span>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  {site.intro.highlights.map((item, idx) => (
+                    <div
+                      key={idx}
+                      className="group p-4 bg-white/70 hover:bg-white rounded-xs border border-gold/20 hover:border-gold/60 transition-all duration-300 shadow-xs hover:shadow-md flex flex-col justify-between"
+                    >
+                      <div>
+                        <div className="text-[11px] font-mono uppercase tracking-wider text-gold font-semibold mb-1">
+                          {item.tag}
+                        </div>
+                        <h4 className="font-serif text-base text-royal-950 font-medium mb-1.5">
+                          {item.title}
+                        </h4>
+                        <p className="text-xs text-ink/70 leading-relaxed">
+                          {item.description}
+                        </p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Actions & Deep Dives */}
+                <div className="mt-6 pt-5 border-t border-ink/10 flex flex-wrap items-center justify-between gap-4">
+                  <Link
+                    href="/about"
+                    className="inline-flex items-center gap-2 text-sm font-medium text-royal-950 hover:text-gold transition-colors group"
+                  >
+                    <span className="font-serif">Read Full Biography &amp; Advisory Roles</span>
+                    <span aria-hidden="true" className="transition-transform group-hover:translate-x-1 text-gold">&rarr;</span>
+                  </Link>
+
+                  <Link
+                    href="/achievements"
+                    className="inline-flex items-center gap-1.5 text-xs text-ink/65 hover:text-royal-950 transition-colors"
+                  >
+                    <span>Explore 40+ State Honors &amp; Export Trophies</span>
+                    <span aria-hidden="true">&rarr;</span>
+                  </Link>
                 </div>
               </Reveal>
             </div>
@@ -80,7 +170,92 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 4. VENTURES PREVIEW */}
+      {/* 4. HARDWARE & MANUFACTURING SHOWCASE */}
+      <section className="bg-paper text-ink py-24 md:py-32 border-b border-gold/15">
+        <div className="container mx-auto px-4 md:px-8">
+          <Reveal>
+            <div className="max-w-3xl mb-16">
+              <span className="text-xs uppercase font-mono tracking-widest text-gold font-semibold mb-3 block">
+                Archival Hardware Artifacts
+              </span>
+              <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-royal-950 mb-4">
+                Hardware &amp; Precision Engineering
+              </h2>
+              <p className="text-lg text-ink/75 leading-relaxed font-sans">
+                Authentic archival hardware engineered and manufactured at SEEPZ, Mumbai—from sub-micron voice coil actuators and precision motors to certified power electronics and portable computing systems.
+              </p>
+            </div>
+          </Reveal>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+            {products.map((product, idx) => (
+              <Reveal key={product.id} delay={idx * 0.1} className="h-full">
+                <div className="h-full flex flex-col bg-white rounded-xs border border-gold/25 hover:border-gold shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden group">
+                  {/* Image Frame with Lightbox Zoom */}
+                  <ImageLightbox
+                    src={product.image}
+                    alt={`${product.name} - ${product.venture}`}
+                    className="block w-full text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-gold"
+                  >
+                    <div className="relative aspect-[4/3] w-full bg-royal-950/5 overflow-hidden">
+                      <Image
+                        src={product.image}
+                        alt={`${product.name} - ${product.venture}`}
+                        fill
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                        className="object-contain p-3.5 group-hover:scale-105 transition-transform duration-500 cursor-zoom-in"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-royal-950/65 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-3">
+                        <span className="text-[11px] text-white/95 flex items-center gap-1 font-medium tracking-wide">
+                          <svg className="w-3.5 h-3.5 text-gold flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+                          </svg>
+                          Click to enlarge artifact
+                        </span>
+                      </div>
+                    </div>
+                  </ImageLightbox>
+
+                  {/* Card Content */}
+                  <div className="p-5 flex-1 flex flex-col justify-between">
+                    <div>
+                      <div className="flex items-center justify-between gap-2 mb-2">
+                        <span className="text-[10px] font-mono uppercase tracking-wider text-gold font-semibold truncate">
+                          {product.category}
+                        </span>
+                        <span className="text-[10px] font-mono text-ink/40 font-semibold">
+                          {product.since}
+                        </span>
+                      </div>
+
+                      <h3 className="font-serif text-lg text-royal-950 font-medium leading-snug mb-2 group-hover:text-gold transition-colors">
+                        {product.name}
+                      </h3>
+
+                      <p className="text-xs text-ink/70 leading-relaxed">
+                        {product.description}
+                      </p>
+                    </div>
+
+                    <div className="mt-4 pt-3 border-t border-gold/15 flex items-center justify-between text-[11px]">
+                      <span className="font-medium text-royal-950/80">
+                        {product.venture}
+                      </span>
+                      {product.spec && (
+                        <span className="text-[10px] font-mono text-ink/50 bg-paper-light px-1.5 py-0.5 rounded border border-gold/10">
+                          SEEPZ
+                        </span>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 5. VENTURES PREVIEW */}
       <section className="bg-white text-ink py-24 md:py-32">
         <div className="container mx-auto px-4 md:px-8">
           <Reveal>

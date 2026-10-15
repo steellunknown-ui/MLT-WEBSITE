@@ -1,0 +1,42 @@
+[
+  {
+    "id": "hard-drive-voice-coil",
+    "name": "Voice Coil Motor & Disk Drive Platter Assembly",
+    "venture": "Tancom Electronics",
+    "since": "1982",
+    "category": "Voice Coil Motors & Disk Peripherals",
+    "image": "/images/vintage-hard-drive-voice-coil.png",
+    "description": "High-precision Winchester hard disk drive mechanism featuring a high-speed voice coil actuator motor (VCM), aerodynamic flying read/write head arm, and mirror-finish magnetic recording platter. Manufactured for global computing OEMs; recipient of the Prime Minister's Award of Excellence.",
+    "spec": "Sub-micron aerodynamic flying height, VCM rotary actuator"
+  },
+  {
+    "id": "stepper-motor-actuator",
+    "name": "Precision Stepper Motor & Toothed Timing Actuator",
+    "venture": "Tancom Electronics / Tandon Magnetics",
+    "since": "1982",
+    "category": "Electro-Mechanical Actuators",
+    "image": "/images/vintage-precision-stepper-motor.jpg",
+    "description": "Micro-stepping head positioning actuator motor featuring a micro-machined toothed timing pulley and flanged mounting bracket. Delivered discrete track-by-track head positioning for Tandon's volume floppy disk and Winchester drive lines.",
+    "spec": "Micro-machined toothed timing gear, discrete step-pulse control"
+  },
+  {
+    "id": "smps-power-supply",
+    "name": "Switch-Mode Power Supply (SMPS) Assembly",
+    "venture": "Ultra Tek Devices / Celetronix",
+    "since": "1988",
+    "category": "Power Electronics & Conversion",
+    "image": "/images/vintage-smps-power-supply.jpg",
+    "description": "Open-frame multi-rail high-efficiency AC-to-DC power converter board (ASSY 79266-1-A). Features high-frequency ferrite transformer, EMI filtration, and multi-voltage DC harness. Certified 'HP OK' for Hewlett-Packard OEM compliance.",
+    "spec": "High-voltage AC to regulated +5V/+12V DC, HP-certified"
+  },
+  {
+    "id": "multimedia-notebook",
+    "name": "Integrated Multimedia Notebook Computer",
+    "venture": "Tandon Group Systems",
+    "since": "1990s",
+    "category": "Portable Computing Systems",
+    "image": "/images/vintage-tandon-multimedia-notebook.jpg",
+    "description": "Full-scale portable personal computer engineered at SEEPZ for international distribution. Pioneered the integration of a slimline tray-loading optical CD-ROM drive alongside an Active Matrix color TFT display and ergonomic input controls.",
+    "spec": "Integrated tray-loading CD-ROM, Active Matrix TFT display"
+  }
+]

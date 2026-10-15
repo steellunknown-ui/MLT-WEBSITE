@@ -57,6 +57,22 @@ export const AchievementSchema = z.object({
 export type Achievement = z.infer<typeof AchievementSchema>;
 
 // ---------------------------------------------------------------------------
+// ProductArtifact
+// ---------------------------------------------------------------------------
+export const ProductArtifactSchema = z.object({
+  id: z.string(),
+  name: z.string(),
+  venture: z.string(),
+  since: z.string(),
+  category: z.string(),
+  image: z.string(),
+  description: z.string(),
+  spec: z.string().optional(),
+});
+
+export type ProductArtifact = z.infer<typeof ProductArtifactSchema>;
+
+// ---------------------------------------------------------------------------
 // PressItem
 // ---------------------------------------------------------------------------
 export const PressItemSchema = z.object({

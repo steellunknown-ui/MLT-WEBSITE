@@ -1,16 +1,18 @@
-﻿import path from "path";
+import path from "path";
 import fs from "fs";
 import {
   TimelineItemSchema,
   VentureSchema,
   AchievementSchema,
   PressItemSchema,
+  ProductArtifactSchema,
 } from "@/lib/schema";
 import type {
   TimelineItem,
   Venture,
   Achievement,
   PressItem,
+  ProductArtifact,
 } from "@/lib/schema";
 
 const contentDir = path.join(process.cwd(), "content");
@@ -60,4 +62,8 @@ export function getAchievements(): Achievement[] {
 
 export function getPress(): PressItem[] {
   return loadJson<PressItem>("press.json", PressItemSchema);
+}
+
+export function getProducts(): ProductArtifact[] {
+  return loadJson<ProductArtifact>("products.json", ProductArtifactSchema);
 }
