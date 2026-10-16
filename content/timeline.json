@@ -1,12 +1,97 @@
 [
-  { "year": "1963", "title": "Joins IBM's San Jose development laboratory", "description": "After graduating from Purdue University (MS in Engineering) and Santa Clara University (MBA), joins the development laboratory staff at IBM in Silicon Valley." },
-  { "year": "1966", "title": "Published in Electronics magazine", "description": "Publishes 'Noise simulators help find peril in power-line defects' (Electronics, 7 March 1966), detailing testing methodologies for data-processing equipment against power disturbances." },
-  { "year": "1967", "title": "Returns to India, joins IBM India", "description": "Returns to India to lead national export operations at IBM India, building the foundational bridges between Indian engineering and global computing markets." },
-  { "year": "1977", "title": "Co-Founds Pentax Engineering", "description": "Following IBM's exit from India, acquires the former manufacturing facility alongside ex-IBM colleagues to continue precision electronics production." },
-  { "year": "1978", "title": "Establishes Tandon Magnetics in SEEPZ", "description": "Founds Tandon Magnetics at SEEPZ, Mumbai, to manufacture magnetic recording heads for floppy disk drives, rapidly earning India's top export honors." },
-  { "year": "1979-80", "title": "National Export Award", "description": "Tandon Magnetics receives the National Award for outstanding export performance, conferred by the President of India." },
-  { "year": "1990s", "title": "Leads the Export Processing Zones Movement", "description": "Serves as Chairman of FEPZAI and SEEMA, championing export infrastructure and securing historic legal rights for women to work night shifts in SEEPZ." },
-  { "year": "1997", "title": "Electronics Man of the Year", "description": "Named Electronics Man of the Year (1997–98) by ELCINA in recognition of transformative contributions to Indian hardware manufacturing and exports." },
-  { "year": "2000", "title": "Founds Celetronix India Pvt. Ltd.", "description": "Consolidates group manufacturing operations into Celetronix India, creating a world-class EMS power provider and electronics exporter." },
-  { "year": "Today", "title": "Chairman, Tandon Group", "description": "Guides the Tandon Group as an international technology incubator, fostering next-generation enterprises across electronics, healthcare, and software." }
+  {
+    "year": "1963",
+    "title": "Joins IBM's San Jose Development Laboratory",
+    "description": "After graduating from Purdue University (MS in Engineering) and Santa Clara University (MBA), joins the development laboratory staff at IBM in Silicon Valley."
+  },
+  {
+    "year": "1966",
+    "title": "Published in Electronics Magazine",
+    "description": "Publishes 'Noise simulators help find peril in power-line defects' (Electronics, 7 March 1966), detailing testing methodologies for data-processing equipment against power disturbances."
+  },
+  {
+    "year": "1967",
+    "title": "Returns to India, Joins IBM India",
+    "description": "Returns to India to lead national export operations at IBM India, building the foundational bridges between Indian engineering and global computing markets."
+  },
+  {
+    "year": "1977",
+    "title": "Co-Founds Pentax Engineering",
+    "description": "Following IBM's exit from India, acquires the former manufacturing facility alongside ex-IBM colleagues to continue precision electronics production."
+  },
+  {
+    "year": "1978",
+    "title": "Tandon Magnetics",
+    "description": "Founds Tandon Magnetics at SEEPZ, Mumbai, pioneering the design and precision manufacturing of computing and storage technology, including magnetic recording heads for floppy disk drives."
+  },
+  {
+    "year": "1979-80",
+    "title": "National Export Award",
+    "description": "Tandon Magnetics receives the National Award for outstanding export performance, conferred by the President of India."
+  },
+  {
+    "year": "1984",
+    "title": "Tandon Magnetics Acquired by Western Digital",
+    "description": "Tandon Magnetics' hard drive and recording head manufacturing operations sold to Western Digital in 1984, establishing a landmark global technology exit."
+  },
+  {
+    "year": "1990s",
+    "title": "Leads the Export Processing Zones Movement",
+    "description": "Serves as Chairman of FEPZAI and SEEMA, championing export infrastructure and securing historic legal rights for women to work night shifts in SEEPZ."
+  },
+  {
+    "year": "1991",
+    "title": "Tandon Motors (Joint Venture with Kollmorgen)",
+    "description": "Joint venture with Kollmorgen to design and manufacture motion technologies. Now operating as part of Danaher Motion."
+  },
+  {
+    "year": "1997",
+    "title": "Electronics Man of the Year",
+    "description": "Named Electronics Man of the Year (1997–98) by ELCINA in recognition of transformative contributions to Indian hardware manufacturing and exports."
+  },
+  {
+    "year": "2000",
+    "title": "Celetronix",
+    "description": "Partnered with Flextronics and New Enterprise Associates (NEA) to launch India's largest electronics manufacturing company serving global OEMs. Sold to Jabil Circuit in 2006."
+  },
+  {
+    "year": "2002",
+    "title": "IQ BackOffice",
+    "description": "Established technology partnership to provide accounts payable outsourcing services. Successfully sold to the Ayala Group in 2012."
+  },
+  {
+    "year": "2006",
+    "title": "Syrma Technology",
+    "description": "Launched magnetics design and manufacturing company specializing in RFID technologies and contract manufacturing services serving global OEMs and the growing Indian market."
+  },
+  {
+    "year": "2007",
+    "title": "Memory Electronics",
+    "description": "Launched Memory Electronics, a Government of India licensed defense electronics equipment manufacturer delivering mission-critical hardware."
+  },
+  {
+    "year": "2010",
+    "title": "Accelyst Solutions (FreeCharge.com)",
+    "description": "Incubated and launched India's unique payments and loyalty platform. Reached 20 million users within 4 years and partnered with Sequoia Capital."
+  },
+  {
+    "year": "2012",
+    "title": "Infinx Healthcare",
+    "description": "Launched healthcare information technology company providing revenue cycle management (RCM) solutions to leading US healthcare systems."
+  },
+  {
+    "year": "2013",
+    "title": "Critical Entry Data Systems",
+    "description": "Acquired company that provided prescription processing and billing services to long term care and mail order pharmacies."
+  },
+  {
+    "year": "2015",
+    "title": "FreeCharge Acquired by Snapdeal",
+    "description": "Sold to Snapdeal in India's largest e-commerce technology acquisition to date."
+  },
+  {
+    "year": "Today",
+    "title": "Chairman, Tandon Group",
+    "description": "Guides the Tandon Group as an international technology incubator, fostering next-generation enterprises across electronics, healthcare, and software."
+  }
 ]

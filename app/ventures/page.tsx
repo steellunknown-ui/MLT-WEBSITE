@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { site } from "@/lib/site";
 import { getVentures } from "@/lib/content";
 import ImagePlaceholder from "@/components/ui/ImagePlaceholder";
@@ -13,17 +14,34 @@ export default function VenturesPage() {
   const ventures = getVentures();
 
   return (
-    <div className="w-full">
-      {/* HEADER */}
-      <section className="bg-royal-950 text-white pt-32 pb-24 md:pt-40 md:pb-32">
-        <div className="container mx-auto px-4 md:px-8 text-center max-w-4xl">
+    <div className="page-wrapper">
+      {/* 1. Page Header */}
+      <section className="relative bg-neutral-950 text-white pt-32 pb-20 md:pt-36 md:pb-24 min-h-[520px] md:min-h-[580px] lg:min-h-[620px] flex items-center justify-center overflow-hidden border-b border-gold/20">
+        {/* Background Image - clearly visible with natural tone */}
+        <div 
+          className="absolute inset-0 opacity-70"
+          style={{
+            backgroundImage: "url('/images/seepz-cleanroom-manufacturing.jpg')",
+            backgroundSize: "cover",
+            backgroundPosition: "center 30%",
+          }}
+        />
+        {/* Neutral dark scrim overlay for crisp text readability */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/65 via-black/55 to-neutral-950/90" />
+
+        <div className="relative z-10 container mx-auto px-4 md:px-8 text-center max-w-4xl drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
           <Reveal>
-            <span className="block text-xs font-semibold uppercase tracking-widest text-gold mb-6">
+            <span className="inline-block text-xs font-semibold uppercase tracking-widest text-gold mb-5 font-royal bg-black/40 px-3 py-1 rounded-xs border border-gold/30 backdrop-blur-xs">
               Ventures
             </span>
-            <h1 className="font-serif text-5xl md:text-7xl mb-8">Ventures</h1>
-            <p className="text-lg md:text-xl text-white/80 leading-relaxed font-serif">
+            <h1 className="font-royal text-5xl md:text-6xl lg:text-7xl leading-tight mb-6 text-white uppercase tracking-wide">
+              Group Ventures
+            </h1>
+            <p className="text-xl md:text-2xl text-gold-light/95 font-serif max-w-2xl mx-auto font-light leading-relaxed mb-6">
               {site.pages.ventures.intro}
+            </p>
+            <p className="text-sm text-white/80 max-w-2xl mx-auto font-sans leading-relaxed">
+              Operating out of SEEPZ, Mumbai, supplying micro-precision hardware for IBM, Apple, HP, Compaq, and Hitachi
             </p>
           </Reveal>
         </div>
@@ -43,11 +61,23 @@ export default function VenturesPage() {
                   {/* Image Column */}
                   <div className="w-full lg:w-1/2">
                     <Reveal delay={0.1} distance={30}>
-                      <ImagePlaceholder 
-                        aspectRatio="16/9" 
-                        description={`PLACEHOLDER: logo of ${venture.name}`} 
-                        className="border border-gold/10"
-                      />
+                      {venture.logo ? (
+                        <div className="relative aspect-video w-full max-w-lg mx-auto flex items-center justify-center">
+                          <Image
+                            src={venture.logo}
+                            alt={`${venture.name} logo`}
+                            fill
+                            className="object-contain"
+                            sizes="(max-width: 1024px) 100vw, 50vw"
+                          />
+                        </div>
+                      ) : (
+                        <ImagePlaceholder 
+                          aspectRatio="16/9" 
+                          description={`PLACEHOLDER: logo of ${venture.name}`} 
+                          className="border border-gold/10"
+                        />
+                      )}
                     </Reveal>
                   </div>
                   

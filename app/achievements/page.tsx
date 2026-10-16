@@ -31,26 +31,31 @@ export default function AchievementsPage() {
   return (
     <div className="w-full">
       {/* HEADER */}
-      <section className="relative bg-royal-950 text-white pt-32 pb-24 md:pt-40 md:pb-32 overflow-hidden">
+      <section className="relative bg-neutral-950 text-white pt-32 pb-20 md:pt-36 md:pb-24 min-h-[380px] md:min-h-[420px] flex items-center justify-center overflow-hidden border-b border-gold/20">
         {/* Background Image with Overlay */}
         <div 
-          className="absolute inset-0 opacity-30 mix-blend-luminosity"
+          className="absolute inset-0 opacity-70"
           style={{
             backgroundImage: "url('/images/achievements-hero.png')",
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}
         />
-        <div className="relative z-10 container mx-auto px-4 md:px-8 text-center max-w-4xl">
+        {/* Neutral dark scrim overlay for crisp text readability without heavy blue cast */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/65 via-black/55 to-neutral-950/90" />
+
+        <div className="relative z-10 container mx-auto px-4 md:px-8 text-center max-w-4xl drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
           <Reveal>
-            <span className="block text-xs font-semibold uppercase tracking-widest text-gold mb-6">
+            <span className="inline-block text-xs font-semibold uppercase tracking-widest text-gold mb-5 bg-black/40 px-3 py-1 rounded-xs border border-gold/30 backdrop-blur-xs font-mono">
               Achievements
             </span>
-            <h1 className="font-serif text-5xl md:text-7xl mb-8">Achievements</h1>
-            <p className="text-lg md:text-xl text-white/80 leading-relaxed font-serif mb-8">
+            <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl leading-tight mb-6 text-white uppercase tracking-wide">
+              Achievements
+            </h1>
+            <p className="text-xl md:text-2xl text-gold-light/95 font-serif max-w-2xl mx-auto font-light leading-relaxed mb-6">
               {site.pages.achievements.intro}
             </p>
-            <p className="text-sm text-white/50 max-w-2xl mx-auto">
+            <p className="text-sm text-white/80 max-w-2xl mx-auto font-sans leading-relaxed">
               {site.pages.achievements.note}
             </p>
           </Reveal>
