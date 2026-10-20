@@ -9,6 +9,7 @@ import type { Metadata } from "next";
 
 import HeroSlider from "@/components/home/HeroSlider";
 import AchievementsCarousel from "@/components/home/AchievementsCarousel";
+import ArchivalImageSlider from "@/components/home/ArchivalImageSlider";
 
 export const metadata: Metadata = {
   title: `${site.founderName} - ${site.title}`,
@@ -67,30 +68,7 @@ export default function HomePage() {
             {/* Left: Archival Cleanroom Image */}
             <div className="lg:col-span-5">
               <Reveal delay={0.15}>
-                <ImageLightbox
-                  src="/images/seepz-cleanroom-manufacturing.jpg"
-                  alt="Mr. M. L. Tandon demonstrating micro-precision magnetic recording head assembly with technicians inside the SEEPZ cleanroom in Mumbai"
-                  className="group block w-full text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-gold"
-                >
-                  <div className="relative aspect-[4/3] w-full overflow-hidden rounded-xs border border-gold/30 bg-royal-950/5 shadow-md transition-all duration-300 group-hover:border-gold group-hover:shadow-xl">
-                    <Image
-                      src="/images/seepz-cleanroom-manufacturing.jpg"
-                      alt="Mr. M. L. Tandon demonstrating micro-precision magnetic recording head assembly with technicians inside the SEEPZ cleanroom in Mumbai"
-                      fill
-                      sizes="(max-width: 1024px) 100vw, 40vw"
-                      className="object-cover object-center transition-transform duration-500 group-hover:scale-105 cursor-zoom-in"
-                      priority
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-royal-950/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-3.5">
-                      <span className="text-xs text-white/95 flex items-center gap-1.5 font-medium tracking-wide">
-                        <svg className="w-4 h-4 text-gold flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
-                        </svg>
-                        Click to expand archival photograph
-                      </span>
-                    </div>
-                  </div>
-                </ImageLightbox>
+                <ArchivalImageSlider />
                 <p className="mt-2.5 text-xs text-ink/65 font-sans italic border-l border-gold/40 pl-3 leading-relaxed">
                   Historical SEEPZ cleanroom, Mumbai: Mr. M. L. Tandon reviewing precision magnetic head assembly with visiting dignitaries and technicians.
                 </p>
@@ -387,18 +365,41 @@ export default function HomePage() {
       */}
 
       {/* 7. QUOTE BLOCK */}
-      <section className="bg-royal-950 text-white py-24 md:py-32 relative">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-px bg-gold"></div>
-        <div className="container mx-auto px-4 md:px-8 text-center max-w-4xl">
+      <section className="relative bg-royal-950 text-white py-16 md:py-20 overflow-hidden border-y border-gold/20">
+        {/* Background Image */}
+        <div 
+          className="absolute inset-0 opacity-80 md:opacity-85"
+          style={{
+            backgroundImage: "url('/images/quote-bg.jpg')",
+            backgroundSize: "cover",
+            backgroundPosition: "center 50%",
+          }}
+        />
+        {/* Slightly more transparent scrim to reveal the sunset & harbor while preserving text contrast */}
+        <div className="absolute inset-0 bg-gradient-to-b from-royal-950/70 via-royal-950/45 to-royal-950/75" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_transparent_30%,_rgba(6,18,46,0.65)_100%)]" />
+
+        {/* Top Accent Divider */}
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-px bg-gradient-to-r from-transparent via-gold to-transparent" />
+
+        <div className="container mx-auto px-4 md:px-8 text-center max-w-3xl relative z-10">
           <Reveal>
-            <blockquote className="font-serif text-3xl md:text-4xl lg:text-5xl leading-tight text-gold/90 mb-8">
+            <div className="inline-flex items-center justify-center w-10 h-10 rounded-full border border-gold/40 bg-royal-950/70 text-gold mb-5 backdrop-blur-xs shadow-md">
+              <svg className="w-4 h-4 fill-current opacity-85" viewBox="0 0 24 24">
+                <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+              </svg>
+            </div>
+            <blockquote className="font-serif text-2xl md:text-3xl lg:text-[2.2rem] leading-snug md:leading-normal text-gold-light/95 mb-6 drop-shadow-[0_2px_12px_rgba(0,0,0,0.95)] font-light italic">
               &ldquo;{site.quote.text}&rdquo;
             </blockquote>
-            <cite className="block text-sm font-semibold uppercase tracking-widest text-white/50 not-italic">
+            <cite className="inline-block text-[11px] md:text-xs font-semibold uppercase tracking-widest text-gold/90 not-italic font-mono border-t border-gold/30 pt-3 px-5 drop-shadow-[0_1px_4px_rgba(0,0,0,0.9)]">
               &mdash; {site.quote.attribution}
             </cite>
           </Reveal>
         </div>
+
+        {/* Bottom Accent Divider */}
+        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-24 h-px bg-gradient-to-r from-transparent via-gold to-transparent" />
       </section>
 
       {/* 8. CLOSING CTA */}

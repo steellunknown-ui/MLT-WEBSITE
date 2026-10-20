@@ -21,14 +21,14 @@ export default function MediaPage() {
   return (
     <div className="w-full">
       {/* HEADER */}
-      <section className="relative bg-neutral-950 text-white pt-32 pb-20 md:pt-36 md:pb-24 min-h-[380px] md:min-h-[420px] flex items-center justify-center overflow-hidden border-b border-gold/20">
+      <section className="relative bg-neutral-950 text-white pt-32 pb-20 md:pt-36 md:pb-24 min-h-[520px] md:min-h-[580px] lg:min-h-[620px] flex items-center justify-center overflow-hidden border-b border-gold/20">
         {/* Background Image with Overlay */}
         <div 
-          className="absolute inset-0 opacity-50"
+          className="absolute inset-0 opacity-70"
           style={{
-            backgroundImage: "url('/images/achievements-hero.png')",
+            backgroundImage: "url('/images/media-hero.jpg')",
             backgroundSize: "cover",
-            backgroundPosition: "center",
+            backgroundPosition: "center 40%",
           }}
         />
         {/* Neutral dark scrim overlay for crisp text readability */}

@@ -27,6 +27,7 @@ export const metadata: Metadata = {
 };
 
 import MotionProvider from "@/components/ui/MotionProvider";
+import ScrollArrow from "@/components/ui/ScrollArrow";
 
 export default function RootLayout({
   children,
@@ -50,6 +51,8 @@ export default function RootLayout({
           </main>
 
           <Footer />
+
+          <ScrollArrow />
         </MotionProvider>
       </body>
     </html>
