@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Reveal from "@/components/ui/Reveal";
 import Button from "@/components/ui/Button";
+import ContactForm from "@/components/contact/ContactForm";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -14,15 +15,16 @@ export default function ContactPage() {
       <section className="relative bg-neutral-950 text-white pt-32 pb-20 md:pt-36 md:pb-24 min-h-[380px] md:min-h-[420px] flex items-center justify-center overflow-hidden border-b border-gold/20">
         {/* Background Image with Overlay */}
         <div 
-          className="absolute inset-0 opacity-40"
+          className="absolute inset-0 opacity-65 md:opacity-75"
           style={{
-            backgroundImage: "url('/images/seepz-cleanroom-inspection.jpg')",
+            backgroundImage: "url('/images/contact-hero-banner.jpg')",
             backgroundSize: "cover",
-            backgroundPosition: "center 30%",
+            backgroundPosition: "center 35%",
           }}
         />
-        {/* Neutral dark scrim overlay for crisp text readability */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/65 via-black/55 to-neutral-950/90" />
+        {/* Executive dark royal scrim overlay for crisp text readability */}
+        <div className="absolute inset-0 bg-gradient-to-b from-royal-950/80 via-royal-950/50 to-neutral-950/90" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_transparent_35%,_rgba(6,18,46,0.65)_100%)]" />
 
         <div className="relative z-10 container mx-auto px-4 md:px-8 text-center max-w-4xl drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
           <Reveal>
@@ -90,51 +92,20 @@ export default function ContactPage() {
               </Reveal>
             </div>
 
-            {/* Right 7 cols: Direct Inquiry Information */}
-            <div className="md:col-span-7">
+            {/* Right 7 cols: Interactive Inquiry Form */}
+            <div id="inquiry-form" className="md:col-span-7 scroll-mt-28">
               <Reveal delay={0.1}>
                 <div className="bg-white p-8 md:p-10 rounded-xs border border-gold/25 shadow-md">
-                  <h3 className="font-serif text-2xl text-royal-950 mb-3">
-                    Corporate &amp; Archival Correspondence
-                  </h3>
-                  <p className="text-sm text-ink/75 leading-relaxed mb-6 font-sans">
-                    For press, academic inquiries, historical documentation, or venture partnerships with the Chairman’s office:
-                  </p>
-
-                  <div className="space-y-4 text-sm font-sans mb-8">
-                    <div className="p-4 bg-paper-light rounded-xs border border-gold/15 flex items-center justify-between">
-                      <div>
-                        <span className="text-[11px] font-mono uppercase tracking-wider text-gold font-semibold block">
-                          Executive Correspondence
-                        </span>
-                        <span className="font-medium text-royal-950">
-                          Office of the Chairman, Tandon Group
-                        </span>
-                      </div>
-                      <span className="text-xs text-ink/50 font-mono">SEEPZ, Mumbai</span>
-                    </div>
-
-                    <div className="p-4 bg-paper-light rounded-xs border border-gold/15 flex items-center justify-between">
-                      <div>
-                        <span className="text-[11px] font-mono uppercase tracking-wider text-gold font-semibold block">
-                          Venture &amp; Technology Inquiries
-                        </span>
-                        <span className="font-medium text-royal-950">
-                          Tandon Group Corporate Development
-                        </span>
-                      </div>
-                      <span className="text-xs text-ink/50 font-mono">Global</span>
-                    </div>
-                  </div>
-
-                  <div className="pt-4 border-t border-gold/15 flex flex-wrap items-center justify-between gap-4">
-                    <span className="text-xs text-ink/60 font-sans">
-                      Official website of Manohar Lal Tandon
+                  <div className="mb-6 pb-4 border-b border-gold/20">
+                    <span className="text-[11px] font-mono uppercase tracking-widest text-gold block mb-1 font-semibold">
+                      Direct Communication
                     </span>
-                    <Button as="link" href="/about" variant="secondary" size="sm">
-                      Read Full Biography &rarr;
-                    </Button>
+                    <h3 className="font-serif text-2xl md:text-3xl text-royal-950">
+                      Send an Inquiry
+                    </h3>
                   </div>
+
+                  <ContactForm />
                 </div>
               </Reveal>
             </div>

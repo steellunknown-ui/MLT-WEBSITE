@@ -28,6 +28,8 @@ export const metadata: Metadata = {
 
 import MotionProvider from "@/components/ui/MotionProvider";
 import ScrollArrow from "@/components/ui/ScrollArrow";
+import { ContactModalProvider } from "@/components/contact/ContactModalContext";
+import ContactModal from "@/components/contact/ContactModal";
 
 export default function RootLayout({
   children,
@@ -39,20 +41,23 @@ export default function RootLayout({
     >
       <body>
         <MotionProvider>
-          {/* Skip-to-content for keyboard users */}
-          <a href="#main-content" className="skip-link">
-            Skip to main content
-          </a>
+          <ContactModalProvider>
+            {/* Skip-to-content for keyboard users */}
+            <a href="#main-content" className="skip-link">
+              Skip to main content
+            </a>
 
-          <Navbar />
+            <Navbar />
 
-          <main id="main-content" tabIndex={-1}>
-            {children}
-          </main>
+            <main id="main-content" tabIndex={-1}>
+              {children}
+            </main>
 
-          <Footer />
+            <Footer />
 
-          <ScrollArrow />
+            <ScrollArrow />
+            <ContactModal />
+          </ContactModalProvider>
         </MotionProvider>
       </body>
     </html>

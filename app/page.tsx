@@ -10,6 +10,7 @@ import type { Metadata } from "next";
 import HeroSlider from "@/components/home/HeroSlider";
 import AchievementsCarousel from "@/components/home/AchievementsCarousel";
 import ArchivalImageSlider from "@/components/home/ArchivalImageSlider";
+import RecentEventsSection from "@/components/home/RecentEventsSection";
 
 export const metadata: Metadata = {
   title: `${site.founderName} - ${site.title}`,
@@ -281,6 +282,9 @@ export default function HomePage() {
 
       {/* 5. ACHIEVEMENTS CAROUSEL (Option A: Royal Award Cards Slider) */}
       <AchievementsCarousel achievements={achievements} />
+
+      {/* 6. RECENT EVENTS & DIGNITARY ENGAGEMENTS: HON'BLE UNION MINISTER SHRI PIYUSH GOYAL & ML TANDON */}
+      <RecentEventsSection />
 
       {/* 6. LATEST FROM THE BLOG (HIDDEN FOR NOW) 
       <section className="bg-paper text-ink py-24 md:py-32 border-t border-gold/10">
