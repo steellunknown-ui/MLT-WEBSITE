@@ -6,6 +6,7 @@ import {
   AchievementSchema,
   PressItemSchema,
   ProductArtifactSchema,
+  MediaArticleSchema,
 } from "@/lib/schema";
 import type {
   TimelineItem,
@@ -13,6 +14,7 @@ import type {
   Achievement,
   PressItem,
   ProductArtifact,
+  MediaArticle,
 } from "@/lib/schema";
 
 const contentDir = path.join(process.cwd(), "content");
@@ -66,4 +68,13 @@ export function getPress(): PressItem[] {
 
 export function getProducts(): ProductArtifact[] {
   return loadJson<ProductArtifact>("products.json", ProductArtifactSchema);
+}
+
+export function getMediaArticles(): MediaArticle[] {
+  return loadJson<MediaArticle>("articles.json", MediaArticleSchema);
+}
+
+export function getMediaArticleBySlug(slug: string): MediaArticle | undefined {
+  const articles = getMediaArticles();
+  return articles.find((a) => a.slug === slug);
 }

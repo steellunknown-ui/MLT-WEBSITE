@@ -81,6 +81,44 @@ export const PressItemSchema = z.object({
   date: z.string(),
   url: z.string(),
   type: z.enum(["article", "video", "interview"]),
+  slug: z.string().nullable().optional(),
+  pdfUrl: z.string().nullable().optional(),
 });
 
 export type PressItem = z.infer<typeof PressItemSchema>;
+
+// ---------------------------------------------------------------------------
+// MediaArticle
+// ---------------------------------------------------------------------------
+export const MediaArticleMetricSchema = z.object({
+  label: z.string(),
+  value: z.string(),
+});
+
+export const MediaArticleSchema = z.object({
+  slug: z.string(),
+  title: z.string(),
+  subtitle: z.string().optional(),
+  outlet: z.string(),
+  date: z.string(),
+  type: z.string(),
+  byline: z.string().optional(),
+  pdfUrl: z.string(),
+  portrait: z.string().optional(),
+  portraitCaption: z.string().optional(),
+  metrics: z.array(MediaArticleMetricSchema).optional(),
+  leadQuote: z.string().optional(),
+  paragraphs: z.array(z.string()),
+  qaList: z
+    .array(
+      z.object({
+        question: z.string(),
+        answer: z.string(),
+      })
+    )
+    .optional(),
+  sourceNote: z.string().optional(),
+});
+
+export type MediaArticle = z.infer<typeof MediaArticleSchema>;
+
