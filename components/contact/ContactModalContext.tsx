@@ -71,9 +71,11 @@ export function ContactModalProvider({ children }: { children: React.ReactNode }
         e.stopPropagation();
         e.stopImmediatePropagation();
 
-        // If on /contact page, scroll down to the embedded inquiry form
+        // If on /contact page, scroll down to the embedded enquiry form
         if (window.location.pathname === "/contact") {
-          const formElem = document.getElementById("inquiry-form");
+          const formElem =
+            document.getElementById("enquiry-form") ||
+            document.getElementById("inquiry-form");
           if (formElem) {
             formElem.scrollIntoView({ behavior: "smooth" });
           }

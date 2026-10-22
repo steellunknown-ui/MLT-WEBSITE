@@ -77,7 +77,7 @@ export default function Footer() {
           {/* Column 4: Social */}
           <div>
             <p className="mb-4 font-sans text-xs font-semibold uppercase tracking-widest text-gold">
-              Inquiries
+              Enquiries
             </p>
             <ul className="flex flex-col gap-2" role="list">
               <li>

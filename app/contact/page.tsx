@@ -35,7 +35,7 @@ export default function ContactPage() {
               Get in Touch
             </h1>
             <p className="text-xl md:text-2xl text-gold-light/95 font-serif max-w-2xl mx-auto font-light leading-relaxed mb-6">
-              Inquiries regarding Manohar Lal Tandon, Tandon Group corporate initiatives, and technology venture incubation.
+              Enquiries regarding Manohar Lal Tandon, Tandon Group corporate initiatives, and technology venture incubation.
             </p>
             <p className="text-sm text-white/80 max-w-2xl mx-auto font-sans leading-relaxed">
               Executive Offices: SEEPZ, Andheri East, Mumbai, India &bull; Silicon Valley, California
@@ -44,7 +44,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* CONTACT DETAILS & INQUIRY CHANNELS */}
+      {/* CONTACT DETAILS & ENQUIRY CHANNELS */}
       <section className="bg-paper text-ink py-20 md:py-28">
         <div className="container mx-auto px-4 md:px-8 max-w-5xl">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-12 items-start">
@@ -92,8 +92,8 @@ export default function ContactPage() {
               </Reveal>
             </div>
 
-            {/* Right 7 cols: Interactive Inquiry Form */}
-            <div id="inquiry-form" className="md:col-span-7 scroll-mt-28">
+            {/* Right 7 cols: Interactive Enquiry Form */}
+            <div id="enquiry-form" className="md:col-span-7 scroll-mt-28">
               <Reveal delay={0.1}>
                 <div className="bg-white p-8 md:p-10 rounded-xs border border-gold/25 shadow-md">
                   <div className="mb-6 pb-4 border-b border-gold/20">
@@ -101,7 +101,7 @@ export default function ContactPage() {
                       Direct Communication
                     </span>
                     <h3 className="font-serif text-2xl md:text-3xl text-royal-950">
-                      Send an Inquiry
+                      Send an Enquiry
                     </h3>
                   </div>
 

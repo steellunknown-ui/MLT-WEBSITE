@@ -13,10 +13,11 @@ export default function ContactForm({ onSuccess, className = "" }: ContactFormPr
     name: "",
     email: "",
     organization: "",
-    subject: "General Executive Inquiry",
+    subject: "General Executive Enquiry",
     message: "",
     honeypot: "",
   });
+  const [customSubject, setCustomSubject] = useState("");
 
   const [captchaInput, setCaptchaInput] = useState("");
   const [actualCaptcha, setActualCaptcha] = useState("");
@@ -49,13 +50,28 @@ export default function ContactForm({ onSuccess, className = "" }: ContactFormPr
       return;
     }
 
+    // 2. Custom enquiry category verification if 'Others' is selected
+    const finalSubject =
+      formData.subject === "Others" ? customSubject.trim() : formData.subject;
+
+    if (formData.subject === "Others" && finalSubject.length < 2) {
+      setStatus({
+        type: "error",
+        message: "Please enter your specific enquiry category.",
+      });
+      return;
+    }
+
     setIsSubmitting(true);
 
     try {
       const response = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          ...formData,
+          subject: finalSubject,
+        }),
       });
 
       const data = await response.json();
@@ -75,10 +91,11 @@ export default function ContactForm({ onSuccess, className = "" }: ContactFormPr
         name: "",
         email: "",
         organization: "",
-        subject: "General Executive Inquiry",
+        subject: "General Executive Enquiry",
         message: "",
         honeypot: "",
       });
+      setCustomSubject("");
       setCaptchaInput("");
 
       if (onSuccess) {
@@ -155,7 +172,7 @@ export default function ContactForm({ onSuccess, className = "" }: ContactFormPr
         </div>
       </div>
 
-      {/* Row 2: Organization & Inquiry Category */}
+      {/* Row 2: Organization & Enquiry Category */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
         <div>
           <div className="flex items-center justify-between mb-1.5 h-5">
@@ -183,7 +200,7 @@ export default function ContactForm({ onSuccess, className = "" }: ContactFormPr
               htmlFor="subject"
               className="text-xs uppercase font-mono tracking-wider text-royal-950/80 font-semibold truncate"
             >
-              Inquiry Category <span className="text-red-500">*</span>
+              Enquiry Category <span className="text-red-500">*</span>
             </label>
           </div>
           <select
@@ -193,14 +210,42 @@ export default function ContactForm({ onSuccess, className = "" }: ContactFormPr
             onChange={handleChange}
             className="w-full h-11 px-3.5 bg-paper-light border border-gold/30 rounded-xs text-royal-950 focus:outline-hidden focus:border-gold focus:ring-1 focus:ring-gold text-sm font-sans transition-all cursor-pointer"
           >
-            <option value="General Executive Inquiry">General Executive Inquiry</option>
+            <option value="General Executive Enquiry">General Executive Enquiry</option>
             <option value="Historical & Archival Documentation">Historical &amp; Archival Documentation</option>
             <option value="Technology Venture & Incubation">Technology Venture &amp; Incubation</option>
             <option value="Press & Media Relations">Press &amp; Media Relations</option>
-            <option value="Academic & Research Inquiry">Academic &amp; Research Inquiry</option>
+            <option value="Academic & Research Enquiry">Academic &amp; Research Enquiry</option>
+            <option value="Others">Others</option>
           </select>
         </div>
       </div>
+
+      {/* If "Others" is selected, specify custom enquiry category manually */}
+      {formData.subject === "Others" && (
+        <div className="pt-0.5">
+          <div className="flex items-center justify-between mb-1.5 h-5">
+            <label
+              htmlFor="customSubject"
+              className="text-xs uppercase font-mono tracking-wider text-royal-950/80 font-semibold"
+            >
+              Specify Enquiry Category <span className="text-red-500">*</span>
+            </label>
+            <span className="text-[11px] text-ink/50 font-sans">
+              Type your custom category
+            </span>
+          </div>
+          <input
+            id="customSubject"
+            type="text"
+            required
+            placeholder="e.g. Philanthropy, Strategic Advisory, Partnerships..."
+            value={customSubject}
+            onChange={(e) => setCustomSubject(e.target.value)}
+            className="w-full h-11 px-3.5 bg-paper-light border border-gold/50 rounded-xs text-royal-950 placeholder:text-ink/35 focus:outline-hidden focus:border-gold focus:ring-1 focus:ring-gold text-sm font-sans transition-all"
+            autoFocus
+          />
+        </div>
+      )}
 
       {/* Message */}
       <div>
@@ -218,7 +263,7 @@ export default function ContactForm({ onSuccess, className = "" }: ContactFormPr
           required
           rows={3}
           minLength={10}
-          placeholder="Please share details regarding your inquiry or correspondence..."
+          placeholder="Please share details regarding your enquiry or correspondence..."
           value={formData.message}
           onChange={handleChange}
           className="w-full px-3.5 py-2.5 bg-paper-light border border-gold/30 rounded-xs text-royal-950 placeholder:text-ink/35 focus:outline-hidden focus:border-gold focus:ring-1 focus:ring-gold text-sm font-sans transition-all resize-y min-h-[90px]"

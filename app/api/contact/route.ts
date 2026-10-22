@@ -6,13 +6,13 @@ const ContactSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
   email: z.string().email("Invalid email address"),
   organization: z.string().optional(),
-  subject: z.string().min(2, "Please select an inquiry category"),
+  subject: z.string().min(2, "Please select or specify an enquiry category"),
   message: z.string().min(10, "Message must be at least 10 characters"),
   honeypot: z.string().optional(), // Bot trap
 });
 
 const RECIPIENT_EMAIL = process.env.CONTACT_RECIPIENT_EMAIL || "deepnarayan1982@gmail.com";
-const FROM_EMAIL = process.env.RESEND_FROM_EMAIL || "Tandon Group Inquiry <onboarding@resend.dev>";
+const FROM_EMAIL = process.env.RESEND_FROM_EMAIL || "Tandon Group Enquiry <onboarding@resend.dev>";
 
 export async function POST(request: Request) {
   try {
@@ -53,7 +53,7 @@ export async function POST(request: Request) {
         success: true,
         simulated: true,
         message:
-          "Inquiry recorded successfully (Development mode: Set RESEND_API_KEY in .env.local to deliver live emails).",
+          "Enquiry recorded successfully (Development mode: Set RESEND_API_KEY in .env.local to deliver live emails).",
       });
     }
 
@@ -83,14 +83,14 @@ export async function POST(request: Request) {
         <body>
           <div class="container">
             <div class="header">
-              <h1>Executive Office Inquiry</h1>
+              <h1>Executive Office Enquiry</h1>
               <p>Website Correspondence for Manohar Lal Tandon</p>
             </div>
             ${
               isFallback
                 ? `
             <div class="alert-box">
-              <strong>Developer Notice:</strong> This inquiry was routed to the account owner mailbox because custom domain verification on Resend is required to deliver directly to <strong>${RECIPIENT_EMAIL}</strong>. Verify your domain at <a href="https://resend.com/domains" style="color: #854d0e; text-decoration: underline;">resend.com/domains</a> to enable unhindered direct routing.
+              <strong>Developer Notice:</strong> This enquiry was routed to the account owner mailbox because custom domain verification on Resend is required to deliver directly to <strong>${RECIPIENT_EMAIL}</strong>. Verify your domain at <a href="https://resend.com/domains" style="color: #854d0e; text-decoration: underline;">resend.com/domains</a> to enable unhindered direct routing.
             </div>
             `
                 : ""
@@ -115,7 +115,7 @@ export async function POST(request: Request) {
                   : ""
               }
               <div class="field">
-                <div class="label">Inquiry Category</div>
+                <div class="label">Enquiry Category</div>
                 <div class="value">${subject}</div>
               </div>
               <div class="field">

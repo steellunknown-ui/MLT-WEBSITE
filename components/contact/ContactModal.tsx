@@ -65,7 +65,7 @@ export default function ContactModal() {
             <div className="bg-royal-950 text-white px-6 py-4.5 sm:px-7 sm:py-5 border-b border-gold/30 flex items-center justify-between shrink-0">
               <div>
                 <span className="text-[11px] font-mono uppercase tracking-widest text-gold block mb-0.5">
-                  Executive Inquiry &bull; ML Tandon
+                  Executive Enquiry &bull; ML Tandon
                 </span>
                 <h2
                   id="contact-modal-title"
