@@ -177,7 +177,10 @@ export default async function BlogPostPage({
                   >
                     WhatsApp
                   </a>
-                  <CopyLinkButton url={url} />
+                  <CopyLinkButton
+                    url={url}
+                    className="text-royal-900 hover:text-gold transition-colors uppercase tracking-widest font-medium text-sm cursor-pointer"
+                  />
               </div>
             </div>
 

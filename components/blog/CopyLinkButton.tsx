@@ -2,7 +2,13 @@
 
 import { useState } from "react";
 
-export default function CopyLinkButton({ url }: { url: string }) {
+export default function CopyLinkButton({
+  url,
+  className,
+}: {
+  url: string;
+  className?: string;
+}) {
   const [copied, setCopied] = useState(false);
 
   const handleCopy = async () => {
@@ -20,7 +26,10 @@ export default function CopyLinkButton({ url }: { url: string }) {
   return (
     <button
       onClick={handleCopy}
-      className="text-royal-900 hover:text-royal-900 transition-colors uppercase tracking-widest font-medium text-sm"
+      className={
+        className ??
+        "text-white hover:text-white transition-colors uppercase tracking-widest font-medium text-xs cursor-pointer"
+      }
       aria-live="polite"
     >
       {copied ? "Copied" : "Copy link"}

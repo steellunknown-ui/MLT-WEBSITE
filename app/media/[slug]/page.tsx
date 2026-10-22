@@ -147,8 +147,11 @@ export default async function MediaArticlePage({ params }: PageProps) {
                 </a>
               ) : null}
 
-              <div className="px-4 py-2.5 bg-white/10 hover:bg-white/20 transition-colors rounded-xs border border-white/15 text-xs text-white">
-                <CopyLinkButton url={`/media/${article.slug}`} />
+              <div className="px-4 py-2.5 bg-white/10 hover:bg-white/20 transition-colors rounded-xs border border-white/20 text-xs">
+                <CopyLinkButton
+                  url={`/media/${article.slug}`}
+                  className="text-white hover:text-white uppercase tracking-widest font-semibold text-xs transition-colors cursor-pointer"
+                />
               </div>
             </div>
           </Reveal>
