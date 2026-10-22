@@ -11,6 +11,7 @@ import HeroSlider from "@/components/home/HeroSlider";
 import AchievementsCarousel from "@/components/home/AchievementsCarousel";
 import ArchivalImageSlider from "@/components/home/ArchivalImageSlider";
 import RecentEventsSection from "@/components/home/RecentEventsSection";
+import ContactModalTrigger from "@/components/contact/ContactModalTrigger";
 
 export const metadata: Metadata = {
   title: `${site.founderName} - ${site.title}`,
@@ -413,9 +414,9 @@ export default function HomePage() {
             <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-royal-950 mb-10 max-w-3xl mx-auto leading-tight">
               {site.about.closingLine}
             </h2>
-            <Button as="link" href="/contact" size="lg">
+            <ContactModalTrigger size="lg">
               Get in touch
-            </Button>
+            </ContactModalTrigger>
           </Reveal>
         </div>
       </section>

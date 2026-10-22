@@ -61,23 +61,26 @@ export function ContactModalProvider({ children }: { children: React.ReactNode }
       const text = target.textContent?.trim().toLowerCase() || "";
       const isGetInTouch =
         text.includes("get in touch") ||
+        text.includes("get an touch") ||
         href === "#get-in-touch" ||
         href === "#contact-modal";
 
       // If user clicked a "Get in touch" button
       if (isGetInTouch) {
+        e.preventDefault();
+        e.stopPropagation();
+        e.stopImmediatePropagation();
+
         // If on /contact page, scroll down to the embedded inquiry form
         if (window.location.pathname === "/contact") {
           const formElem = document.getElementById("inquiry-form");
           if (formElem) {
-            e.preventDefault();
             formElem.scrollIntoView({ behavior: "smooth" });
           }
           return;
         }
 
         // If on any other page, open the popup modal
-        e.preventDefault();
         setIsOpen(true);
         return;
       }
@@ -86,13 +89,13 @@ export function ContactModalProvider({ children }: { children: React.ReactNode }
     };
 
     window.addEventListener("hashchange", handleHashCheck);
-    document.addEventListener("click", handleGlobalClick);
+    document.addEventListener("click", handleGlobalClick, true);
     handleHashCheck();
 
     return () => {
       window.removeEventListener("open-contact-modal", handleCustomOpen);
       window.removeEventListener("hashchange", handleHashCheck);
-      document.removeEventListener("click", handleGlobalClick);
+      document.removeEventListener("click", handleGlobalClick, true);
     };
   }, []);
 

@@ -3,6 +3,7 @@
 import { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Button from "@/components/ui/Button";
+import { useContactModal } from "@/components/contact/ContactModalContext";
 
 export interface HeroSlide {
   id: string;
@@ -60,6 +61,7 @@ const SLIDES: HeroSlide[] = [
 ];
 
 export default function HeroSlider() {
+  const { openContactModal } = useContactModal();
   const [current, setCurrent] = useState(0);
   const [timerKey, setTimerKey] = useState(0);
 
@@ -172,14 +174,26 @@ export default function HeroSlider() {
                     </Button>
                   )}
                   {slide.secondaryCta && (
-                    <Button
-                      as="link"
-                      href={slide.secondaryCta.href}
-                      variant="secondary"
-                      size="lg"
-                    >
-                      {slide.secondaryCta.label}
-                    </Button>
+                    slide.secondaryCta.label.toLowerCase().includes("touch") ? (
+                      <Button
+                        as="button"
+                        type="button"
+                        onClick={openContactModal}
+                        variant="secondary"
+                        size="lg"
+                      >
+                        {slide.secondaryCta.label}
+                      </Button>
+                    ) : (
+                      <Button
+                        as="link"
+                        href={slide.secondaryCta.href}
+                        variant="secondary"
+                        size="lg"
+                      >
+                        {slide.secondaryCta.label}
+                      </Button>
+                    )
                   )}
                 </div>
               </motion.div>

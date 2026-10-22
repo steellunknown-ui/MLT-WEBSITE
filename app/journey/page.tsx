@@ -1,6 +1,7 @@
 import { site } from "@/lib/site";
 import { getTimeline } from "@/lib/content";
 import Button from "@/components/ui/Button";
+import ContactModalTrigger from "@/components/contact/ContactModalTrigger";
 import Reveal from "@/components/ui/Reveal";
 import Timeline from "@/components/ui/Timeline";
 import type { Metadata } from "next";
@@ -69,9 +70,9 @@ export default function JourneyPage() {
             <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-royal-950 mb-10 max-w-3xl mx-auto leading-tight">
               {site.about.closingLine}
             </h2>
-            <Button as="link" href="/contact" size="lg">
+            <ContactModalTrigger size="lg">
               Get in touch
-            </Button>
+            </ContactModalTrigger>
           </Reveal>
         </div>
       </section>
