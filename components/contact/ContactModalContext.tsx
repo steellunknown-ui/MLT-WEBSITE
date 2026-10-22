@@ -1,6 +1,7 @@
 "use client";
 
 import React, { createContext, useContext, useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 
 interface ContactModalContextType {
   isOpen: boolean;
@@ -16,39 +17,72 @@ const ContactModalContext = createContext<ContactModalContextType>({
 
 export function ContactModalProvider({ children }: { children: React.ReactNode }) {
   const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
 
-  const openContactModal = () => setIsOpen(true);
+  const openContactModal = () => {
+    // Never open popup modal if already on /contact page
+    if (pathname === "/contact" || (typeof window !== "undefined" && window.location.pathname === "/contact")) {
+      return;
+    }
+    setIsOpen(true);
+  };
+
   const closeContactModal = () => setIsOpen(false);
 
-  // Listen for global custom event, hash changes, and click events on /contact links
+  // Automatically ensure modal is closed whenever on /contact page
   useEffect(() => {
-    const handleCustomOpen = () => setIsOpen(true);
+    if (pathname === "/contact") {
+      setIsOpen(false);
+    }
+  }, [pathname]);
+
+  // Listen for global custom event, hash changes, and click events on "Get in Touch" buttons
+  useEffect(() => {
+    const handleCustomOpen = () => {
+      if (window.location.pathname !== "/contact") {
+        setIsOpen(true);
+      }
+    };
     window.addEventListener("open-contact-modal", handleCustomOpen);
 
     const handleHashCheck = () => {
-      if (window.location.hash === "#get-in-touch" || window.location.hash === "#contact-form") {
-        setIsOpen(true);
+      if (window.location.pathname !== "/contact") {
+        if (window.location.hash === "#get-in-touch" || window.location.hash === "#contact-form") {
+          setIsOpen(true);
+        }
       }
     };
 
     const handleGlobalClick = (e: MouseEvent) => {
-      const target = (e.target as HTMLElement).closest("a");
+      const target = (e.target as HTMLElement).closest("a, button");
       if (!target) return;
-      const href = target.getAttribute("href");
-      if (href === "/contact" || href === "#contact-modal" || href === "#get-in-touch") {
-        // If not on /contact page, open the popup modal directly
-        if (window.location.pathname !== "/contact") {
-          e.preventDefault();
-          setIsOpen(true);
-        } else {
-          // If already on /contact page, scroll down to the form
+
+      const href = target.getAttribute("href") || "";
+      const text = target.textContent?.trim().toLowerCase() || "";
+      const isGetInTouch =
+        text.includes("get in touch") ||
+        href === "#get-in-touch" ||
+        href === "#contact-modal";
+
+      // If user clicked a "Get in touch" button
+      if (isGetInTouch) {
+        // If on /contact page, scroll down to the embedded inquiry form
+        if (window.location.pathname === "/contact") {
           const formElem = document.getElementById("inquiry-form");
           if (formElem) {
             e.preventDefault();
             formElem.scrollIntoView({ behavior: "smooth" });
           }
+          return;
         }
+
+        // If on any other page, open the popup modal
+        e.preventDefault();
+        setIsOpen(true);
+        return;
       }
+
+      // Regular links to /contact (e.g. Navbar or Footer "Contact") navigate normally
     };
 
     window.addEventListener("hashchange", handleHashCheck);

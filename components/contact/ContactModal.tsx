@@ -2,6 +2,7 @@
 
 import { useEffect, useSyncExternalStore } from "react";
 import { createPortal } from "react-dom";
+import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { useContactModal } from "./ContactModalContext";
 import ContactForm from "./ContactForm";
@@ -10,6 +11,7 @@ const emptySubscribe = () => () => {};
 
 export default function ContactModal() {
   const { isOpen, closeContactModal } = useContactModal();
+  const pathname = usePathname();
   const mounted = useSyncExternalStore(emptySubscribe, () => true, () => false);
 
   // Close on Escape & prevent background body scrolling
@@ -18,7 +20,7 @@ export default function ContactModal() {
       if (e.key === "Escape") closeContactModal();
     };
 
-    if (isOpen) {
+    if (isOpen && pathname !== "/contact") {
       document.addEventListener("keydown", handleKeyDown);
       document.body.style.overflow = "hidden";
     }
@@ -27,9 +29,10 @@ export default function ContactModal() {
       document.removeEventListener("keydown", handleKeyDown);
       document.body.style.overflow = "";
     };
-  }, [isOpen, closeContactModal]);
+  }, [isOpen, closeContactModal, pathname]);
 
-  if (!mounted) return null;
+  // NEVER render modal on the contact page or before mount
+  if (!mounted || pathname === "/contact") return null;
 
   return createPortal(
     <AnimatePresence>
