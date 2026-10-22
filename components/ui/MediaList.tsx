@@ -143,7 +143,10 @@ export default function MediaList({ items }: MediaListProps) {
                           <p className="text-xs font-semibold uppercase tracking-widest text-gold mb-1.5 font-mono">
                             {item.outlet}
                           </p>
-                          <h3 className="font-serif text-xl md:text-2xl text-royal-950 font-medium leading-snug">
+                          <h3
+                            onClick={() => toggleExpand(itemId)}
+                            className="font-serif text-xl md:text-2xl text-royal-950 font-medium leading-snug cursor-pointer hover:text-gold transition-colors"
+                          >
                             {item.title}
                           </h3>
                         </div>

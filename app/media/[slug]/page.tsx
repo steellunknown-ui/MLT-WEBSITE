@@ -119,18 +119,33 @@ export default async function MediaArticlePage({ params }: PageProps) {
 
             {/* Action Buttons: PDF & Share */}
             <div className="flex flex-wrap items-center gap-4 pt-4 border-t border-gold/20">
-              <a
-                href={article.pdfUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2.5 px-6 py-3 bg-gold text-royal-950 text-xs font-semibold uppercase tracking-widest hover:bg-white transition-colors rounded-xs shadow-md"
-              >
-                <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
-                  <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-9.5 8.5h-2v3H6V7.5h3.5c1.1 0 2 .9 2 2v1c0 1.1-.9 2-2 2zm1 7h-1.5v-5h1.5v5zm6.5-3.5c0 .8-.7 1.5-1.5 1.5h-3V7.5h3c.8 0 1.5.7 1.5 1.5v6zm-6-8.5v3h1.5c.3 0 .5-.2.5-.5v-2c0-.3-.2-.5-.5-.5H11zm5 5h-1.5v-3H16v3z"/>
-                </svg>
-                <span>View Original Archival PDF Scan</span>
-                <span aria-hidden="true">&rarr;</span>
-              </a>
+              {article.pdfUrl ? (
+                <a
+                  href={article.pdfUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2.5 px-6 py-3 bg-gold text-royal-950 text-xs font-semibold uppercase tracking-widest hover:bg-white transition-colors rounded-xs shadow-md"
+                >
+                  <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                    <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-9.5 8.5h-2v3H6V7.5h3.5c1.1 0 2 .9 2 2v1c0 1.1-.9 2-2 2zm1 7h-1.5v-5h1.5v5zm6.5-3.5c0 .8-.7 1.5-1.5 1.5h-3V7.5h3c.8 0 1.5.7 1.5 1.5v6zm-6-8.5v3h1.5c.3 0 .5-.2.5-.5v-2c0-.3-.2-.5-.5-.5H11zm5 5h-1.5v-3H16v3z"/>
+                  </svg>
+                  <span>View Original Archival PDF Scan</span>
+                  <span aria-hidden="true">&rarr;</span>
+                </a>
+              ) : article.sourceUrl ? (
+                <a
+                  href={article.sourceUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2.5 px-6 py-3 bg-gold text-royal-950 text-xs font-semibold uppercase tracking-widest hover:bg-white transition-colors rounded-xs shadow-md"
+                >
+                  <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                    <path d="M14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3m-2 16H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7z"/>
+                  </svg>
+                  <span>Read on Original Publication</span>
+                  <span aria-hidden="true">&rarr;</span>
+                </a>
+              ) : null}
 
               <div className="px-4 py-2.5 bg-white/10 hover:bg-white/20 transition-colors rounded-xs border border-white/15 text-xs text-white">
                 <CopyLinkButton url={`/media/${article.slug}`} />
@@ -270,15 +285,27 @@ export default async function MediaArticlePage({ params }: PageProps) {
                   </p>
                 </div>
 
-                <a
-                  href={article.pdfUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 px-5 py-3 bg-royal-950 text-white hover:bg-gold hover:text-royal-950 transition-colors text-xs font-semibold uppercase tracking-widest rounded-xs flex-shrink-0"
-                >
-                  <span>Open PDF Scan</span>
-                  <span aria-hidden="true">&rarr;</span>
-                </a>
+                {article.pdfUrl ? (
+                  <a
+                    href={article.pdfUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center gap-2 px-5 py-3 bg-royal-950 text-white hover:bg-gold hover:text-royal-950 transition-colors text-xs font-semibold uppercase tracking-widest rounded-xs flex-shrink-0"
+                  >
+                    <span>Open PDF Scan</span>
+                    <span aria-hidden="true">&rarr;</span>
+                  </a>
+                ) : article.sourceUrl ? (
+                  <a
+                    href={article.sourceUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center gap-2 px-5 py-3 bg-royal-950 text-white hover:bg-gold hover:text-royal-950 transition-colors text-xs font-semibold uppercase tracking-widest rounded-xs flex-shrink-0"
+                  >
+                    <span>View Original Publication</span>
+                    <span aria-hidden="true">&rarr;</span>
+                  </a>
+                ) : null}
               </div>
             </Reveal>
           </div>
